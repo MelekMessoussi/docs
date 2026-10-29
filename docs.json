@@ -26,63 +26,49 @@
         "product": "Platform",
         "groups": [
           {
-            "group": "Get started",
+            "group": "Introduction",
             "hidden": false,
             "expanded": true,
             "pages": [
               "platform/introduction",
-              "platform/quickstart",
-              "platform/account-setup",
-              "changelog"
+              "platform/discover/what-agents-can-do",
+              "platform/discover/why-myna-agents-are-different",
+              "platform/discover/anatomy-of-a-myna-agent"
             ]
           },
           {
-            "group": "Core Concepts",
+            "group": "Getting started",
             "hidden": false,
             "expanded": true,
             "pages": [
-              "concepts/agents",
-              "concepts/campaigns",
-              "concepts/contacts",
-              "concepts/workspaces"
+              "platform/getting-started/set-up-your-workspace",
+              "platform/getting-started/launch-your-first-agent",
+              "platform/getting-started/talk-to-your-agent"
             ]
           },
           {
-            "group": "Agents",
+            "group": "Explore the platform",
             "hidden": false,
             "pages": [
-              "agents/creating-agents",
-              "agents/tone-personality",
-              "agents/knowledge-bases",
-              "agents/playground"
+              "platform/explore/dashboard",
+              "platform/explore/agents",
+              "platform/explore/radar",
+              "platform/explore/contacts",
+              "platform/explore/conversations",
+              "platform/explore/calendars",
+              "platform/explore/tickets",
+              "platform/explore/reputation",
+              "platform/explore/personas",
+              "platform/explore/memory-hub",
+              "platform/explore/playground"
             ]
           },
           {
-            "group": "Campaigns",
+            "group": "Myna and agent workflows",
             "hidden": false,
             "pages": [
-              "campaigns/creating-campaigns",
-              "campaigns/campaign-messages",
-              "campaigns/qualification",
-              "campaigns/scheduling"
-            ]
-          },
-          {
-            "group": "Contacts & Conversations",
-            "hidden": false,
-            "pages": [
-              "contacts/managing-contacts",
-              "contacts/conversations",
-              "contacts/custom-fields",
-              "contacts/tags"
-            ]
-          },
-          {
-            "group": "Billing & Plans",
-            "hidden": false,
-            "pages": [
-              "billing/credits",
-              "billing/plans"
+              "platform/workflows/tour-of-workflow-studio",
+              "platform/workflows/go-live-checklist"
             ]
           }
         ]
