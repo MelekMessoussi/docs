@@ -1,0 +1,134 @@
+---
+title: "Manage Workspace Users, Roles, and Permissions in Myna"
+sidebarTitle: "Users & Permissions"
+description: "Invite teammates and clients to your workspace, assign roles, control feature access with permissions, and manage agency-level team visibility."
+---
+
+Every Myna workspace has its own set of users, each assigned a role that governs what they can see and do. You can invite teammates, clients, or contractors to a workspace and give them exactly the level of access they need — from full administrative control to read-only conversation access. Agency accounts add a second role layer that grants cross-workspace visibility for your internal team.
+
+## Workspace Roles
+
+Every user in a workspace is assigned one of three roles: **Owner**, **Admin**, or **User**. The owner role belongs to the person who created the workspace (or was granted ownership by an agency admin) and cannot be changed.
+
+<Note>
+Workspace users can only see the workspace they've been explicitly invited to. If you're a workspace admin, you have no visibility into other workspaces you haven't been invited to — even within the same agency.
+</Note>
+
+### Role Permissions Comparison
+
+The table below reflects the default permissions for each role. Workspace owners can customize admin and user permissions in **Settings → Permissions**.
+
+| Feature | Owner | Admin | User |
+|---|---|---|---|
+| View dashboard | ✅ | ✅ | ✅ |
+| View conversations | ✅ | ✅ | ✅ |
+| Send messages | ✅ | ✅ | ✅ |
+| View contacts | ✅ | ✅ | ✅ |
+| Create & edit contacts | ✅ | ✅ | ✅ |
+| Delete contacts | ✅ | ✅ | ❌ |
+| View calendar | ✅ | ✅ | ✅ |
+| Create & edit calendar events | ✅ | ✅ | ❌ |
+| View agents | ✅ | ✅ | ❌ |
+| Create & edit agents | ✅ | ✅ | ❌ |
+| View & manage campaigns | ✅ | ✅ | ❌ |
+| Memory Hub access | ✅ | ✅ | ❌ |
+| Playground access | ✅ | ✅ | ❌ |
+| View & manage integrations | ✅ | ✅ | ❌ |
+| View billing | ✅ | ✅ | ❌ |
+| View users | ✅ | ✅ | ❌ |
+| Invite & remove users | ✅ | ❌ | ❌ |
+| Edit workspace settings | ✅ | ✅ | ❌ |
+| Change user roles | ✅ | ❌ | ❌ |
+| Remove users | ✅ | ❌ | ❌ |
+
+<Info>
+Workspace owners can customize the default permissions for the Admin and User roles. Go to **Settings → Permissions** to adjust which features each role can access within your workspace.
+</Info>
+
+## Inviting a New User
+
+<Steps>
+  <Step title="Open Settings → Users">
+    In the workspace sidebar, navigate to **Settings** and select **Users**.
+  </Step>
+  <Step title="Click Invite User">
+    Click the **Invite User** button to open the invite form.
+  </Step>
+  <Step title="Enter the email address">
+    Type the email address of the person you want to invite. Make sure you use the email they'll use to log in to Myna.
+  </Step>
+  <Step title="Select a role">
+    Choose **Admin** to give them full workspace access (agents, campaigns, billing view, settings), or **User** to give them limited access (conversations and contacts only).
+  </Step>
+  <Step title="Send the invite">
+    Click **Send Invite**. The person receives an email with an invite link. They must click the link to accept and join the workspace.
+  </Step>
+</Steps>
+
+### Pending Invites
+
+Invited users appear in the Users list with a **Pending** status until they accept their invite. You can resend or revoke a pending invite at any time from the same Users settings page.
+
+<Tip>
+If an invitee doesn't receive the email, ask them to check their spam folder. The invite email comes from Myna's notification address and occasionally gets filtered.
+</Tip>
+
+## Removing a User
+
+To revoke a user's access, navigate to **Settings → Users**, find the user in the list, and click **Remove**. Their access is revoked immediately — they will no longer be able to log in to the workspace. Only the workspace owner can remove users. You cannot remove yourself from a workspace.
+
+## Customizing Permissions
+
+Workspace owners can fine-tune what admins and users are allowed to do beyond the defaults. Navigate to **Settings → Permissions** to open the permissions editor.
+
+<Accordion title="Available permission categories">
+You can enable or disable specific actions within each of the following categories for the Admin and User roles:
+
+- **Dashboard** — View access
+- **Contacts** — View, create/edit, delete
+- **Conversations** — View, send
+- **Calendar** — View, create/edit, delete
+- **Agents** — View, create/edit, delete
+- **Campaigns** — View, create/edit, delete
+- **Memory Hub** — View, create/edit, delete
+- **Playground** — Access
+- **Integrations** — View, manage
+- **Billing** — View, manage
+- **Users** — View, invite/remove
+- **Settings** — View, edit
+
+Changes take effect immediately for all users currently in the workspace.
+</Accordion>
+
+## Agency-Level Roles
+
+If your workspace is part of an agency, there's a second layer of roles that applies at the agency level — independent of workspace roles.
+
+| Agency Role | What They Can Do |
+|---|---|
+| **Owner** | Full agency control: create/detach workspaces, manage agency billing, invite/remove agency users, update agency settings |
+| **Admin** | Create workspaces, invite users to workspaces, view all workspace data across the agency — cannot manage billing or agency-level settings |
+
+Agency owners and admins can switch between all workspaces under the agency using the workspace switcher. Their agency role grants this cross-workspace access — it doesn't override workspace-level permissions within any individual workspace.
+
+### Inviting an Agency Team Member
+
+<Steps>
+  <Step title="Open the Agency Users page">
+    From the agency dashboard, navigate to **Agency → Users**.
+  </Step>
+  <Step title="Enter their email and role">
+    In the Invite User form, enter the team member's email address and select either **Admin** or **User** as their agency role.
+  </Step>
+  <Step title="Send the invite">
+    Click **Send Invite**. The team member receives an invitation email with a link to accept. Once accepted, they appear in the agency users list with the assigned role.
+  </Step>
+</Steps>
+
+### Removing an Agency Team Member
+
+Agency owners can remove any non-owner team member from the agency. Navigate to **Agency → Users**, find the person in the members table, and click **Remove**. Removing someone from the agency revokes their cross-workspace access but does not delete any workspace-level accounts they may have.
+
+<Warning>
+You cannot remove yourself from the agency as the owner. If you need to transfer ownership, contact Myna support.
+</Warning>

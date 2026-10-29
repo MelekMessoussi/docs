@@ -1,0 +1,127 @@
+---
+title: "Myna AI Agents: Configuration, Tone, and Knowledge Base"
+sidebarTitle: "Agents"
+description: "Agents are the AI personas at the center of every Myna conversation. Learn how to configure tone, knowledge base, and behavior settings."
+---
+
+An agent is the AI personality at the center of every Myna conversation. When a contact receives a message from your campaign, they're talking to your agent — a named, configurable AI persona that knows your business, follows your brand's tone, and pursues the goals you set. Agents are not generic chatbots. They are purpose-built outreach specialists tuned to qualify leads, handle objections, and book appointments on your behalf.
+
+## What an agent does
+
+Every time a contact sends a reply, your agent reads the entire conversation history, evaluates the contact's situation, and decides the most appropriate response. Depending on the context, the agent might:
+
+- Answer a question about your product or service using its knowledge base
+- Handle an objection and keep the conversation moving
+- Ask a qualification question to collect a missing piece of information
+- Offer available appointment slots and lock in a booking
+- Send a closing message if a contact is not a fit
+
+All of this happens automatically, in natural language, and within the tone boundaries you define.
+
+## Agent settings
+
+### Name and timezone
+
+Give your agent a name that your contacts will recognize in messages — typically a real-sounding first name that matches your brand's feel (e.g., "Alex" or "Jordan"). The agent's timezone controls when the agent treats itself as "available" for response timing purposes, and should match your business's operating timezone.
+
+### Tone and personality
+
+The tone configuration is the most powerful tool for shaping how your agent communicates. Each slider controls one dimension of the agent's communication style.
+
+<Accordion title="Formality">
+  Controls how professional or casual the agent sounds. A high formality setting produces clear, polished language with proper grammar. A low formality setting produces a more relaxed, conversational style — contractions, shorter sentences, and a friendlier register.
+
+  **When to adjust:** Set formality higher for B2B or enterprise audiences. Lower it for consumer-facing campaigns where a natural, friendly tone converts better.
+</Accordion>
+
+<Accordion title="Humor">
+  Controls how often and how lightly the agent incorporates humor or wit into its responses. This is not joke-telling — it's the difference between a purely transactional tone and one that occasionally uses a light touch to build rapport.
+
+  **When to adjust:** Use sparingly for service industries that require trust (insurance, legal, medical). Raise it for casual consumer products or brands with a playful identity.
+</Accordion>
+
+<Accordion title="Enthusiasm">
+  Controls the energy level in the agent's messages. High enthusiasm produces exclamation points, energetic phrasing, and a sense of urgency. Low enthusiasm is measured, calm, and matter-of-fact.
+
+  **When to adjust:** High enthusiasm suits event promotions and limited-time offers. Low enthusiasm works better for consultative or high-consideration sales where the contact needs to feel heard rather than hyped.
+</Accordion>
+
+<Accordion title="Empathy">
+  Controls how warmly the agent acknowledges concerns, hesitations, or frustrations. A high empathy setting produces responses that validate the contact's feelings before pivoting to the next step. A low empathy setting is more direct and less focused on emotional acknowledgment.
+
+  **When to adjust:** Raise empathy for service businesses, healthcare-adjacent products, or any campaign where trust-building is critical. Lower it for high-volume outreach where brevity matters most.
+</Accordion>
+
+<Accordion title="Persuasiveness">
+  Controls how assertively the agent steers toward the campaign goal. A high persuasiveness setting produces more persistent, benefits-focused responses that push toward a yes. A low persuasiveness setting is informational and lets the contact drive the pace.
+
+  **When to adjust:** High persuasiveness works for outbound campaigns with a clear offer. Low persuasiveness is better for inbound leads who are already warm and just need information.
+</Accordion>
+
+<Accordion title="Creativity">
+  Controls how much the agent varies its phrasing and approach from message to message. High creativity produces more varied, inventive language. Low creativity produces consistent, predictable phrasing.
+
+  **When to adjust:** Higher creativity helps avoid the "copy-paste bot" feeling in long campaigns. Keep it lower if you need responses to be tightly on-script.
+</Accordion>
+
+<Accordion title="Spelling errors and slang">
+  These two settings work together to control whether the agent mimics natural human typing patterns — occasional typos, informal abbreviations, or conversational slang. When both are enabled at low levels, the agent's messages feel more human and less machine-generated.
+
+  **When to adjust:** Use these carefully. Small amounts of intentional imperfection can increase response rates in SMS campaigns. Avoid on any formal or compliance-sensitive use case.
+</Accordion>
+
+<Accordion title="Punctuation">
+  Controls whether the agent uses standard punctuation, minimal punctuation (common in casual texting), or exaggerated punctuation. Casual texting often omits periods at the end of sentences and uses ellipses informally.
+
+  **When to adjust:** Match your audience's communication style. Formal audiences expect correct punctuation. Younger or more casual audiences may find heavy punctuation stilted.
+</Accordion>
+
+<Accordion title="Emoji use">
+  Controls whether and how often the agent includes emojis in its messages. Disabled means no emojis at all. Enabled allows the agent to naturally include relevant emojis where appropriate.
+
+  **When to adjust:** Emojis can increase SMS open rates and make messages feel warmer. Disable them for any business context where emojis would seem unprofessional.
+</Accordion>
+
+<Accordion title="Response length">
+  Controls the typical length of the agent's outbound messages. Short responses are punchy, one-to-three sentence replies. Long responses include more explanation, context, and detail.
+
+  **When to adjust:** SMS conversations almost always benefit from shorter responses. Longer responses may be appropriate for email campaigns or when a contact asks a complex question that genuinely requires detail.
+</Accordion>
+
+## Knowledge base
+
+Every agent can be connected to a knowledge base — a collection of information your agent uses to answer product, service, and company questions accurately.
+
+To connect a knowledge base, navigate to your agent's settings and select a knowledge base from the **Knowledge Base** dropdown. You manage knowledge bases from **Settings → Knowledge Bases**.
+
+<Tip>
+  A well-stocked knowledge base is the single biggest driver of agent accuracy. Populate it with your sales scripts, FAQ documents, product specs, and objection-handling playbooks before running real campaigns.
+</Tip>
+
+## Agents and campaigns
+
+One agent can power multiple campaigns simultaneously. For example, you might have a single "Alex" agent running a summer roofing campaign and a winter campaign at the same time, with each campaign targeting a different audience but using the same persona.
+
+When you create a campaign, you select which agent drives it. You can change the agent attached to a campaign at any time, though doing so will affect all future conversations in that campaign.
+
+<Note>
+  Changing an agent's tone settings affects all campaigns using that agent, including active ones. If you want to test a new tone for one campaign without affecting others, create a second agent with the new settings.
+</Note>
+
+## Agent actions
+
+Behind the scenes, your agent evaluates every inbound message and selects the most appropriate action. These actions include:
+
+| Action | When the agent uses it |
+|---|---|
+| General reply | Conversational messages that don't fit a more specific action |
+| Handle objection | Disinterest, hesitation, rejection, or deflection from the contact |
+| Ask qualification question | A required piece of qualification data is still missing |
+| Update contact | The contact provides or corrects personal details |
+| Offer appointment slots | Contact shows interest but hasn't proposed a specific time |
+| Schedule appointment | Contact proposes or accepts a specific date and time |
+| Modify appointment | Contact wants to change an already-scheduled appointment |
+| Respect opt-out | Contact explicitly requests to stop all communication |
+| Do nothing | Contact sends a brief acknowledgment with no pending actions |
+
+You don't need to configure these actions directly — the agent chooses them based on the conversation and your campaign's goals.

@@ -1,0 +1,141 @@
+---
+title: "Get Your First Myna AI Campaign Running in 15 Minutes"
+sidebarTitle: "Quick Start"
+description: "Create your account, configure a workspace, launch an AI agent, and send your first campaign message — all in under 15 minutes with Myna."
+---
+
+This guide walks you through everything you need to go from a blank account to an active campaign reaching real contacts. By the end, your AI agent will be ready to send its first outbound message.
+
+Open [app.myna.cx](https://app.myna.cx) in your browser to follow along.
+
+<Steps>
+  <Step title="Create your account">
+    Go to [app.myna.cx/register](https://app.myna.cx/register) and fill in your first name, last name, email, and a strong password. Click **Create Account**.
+
+    Myna automatically creates your first workspace — named `[First Name]'s Workspace` — and sends a verification email to your address. On the next screen, enter the 6-digit code from that email to confirm your account and land on the onboarding checklist.
+
+    <Tip>
+      You can also sign up with Google for a one-click registration experience.
+    </Tip>
+  </Step>
+
+  <Step title="Complete your business profile">
+    After registration, you land on the onboarding checklist. Click **Update Business Profile** and fill in your:
+
+    - Business name and niche
+    - Website, email, and phone number
+    - Business address
+
+    This information gives your AI agent the context it needs to answer basic questions about your company accurately.
+
+    <Note>
+      Your business profile is stored in the **Memory Hub** and is used by your agents to answer questions about your company during live conversations.
+    </Note>
+  </Step>
+
+  <Step title="Build your Memory Hub">
+    The Memory Hub is your agent's knowledge base. It stores facts, scripts, FAQs, and any product or service information your agent should know.
+
+    From the onboarding checklist, click **Build Memory Hub**. You can add entries manually or import pages directly from your website. Add at least a few entries describing:
+    - What your product or service does
+    - Common objections and how to handle them
+    - Your service area, pricing range, or availability
+
+    You can expand the Memory Hub at any time. For now, a few paragraphs of context are enough to get started.
+  </Step>
+
+  <Step title="Create your first agent">
+    Navigate to **Agents** in the left sidebar and click **New Agent**.
+
+    Give your agent a name (this is the name your leads will see in messages), choose its timezone, and configure its tone settings. Key personality settings include:
+
+    | Setting | What it controls |
+    |---|---|
+    | Formality | How professional vs. casual the agent sounds |
+    | Enthusiasm | Energy level in messages |
+    | Empathy | How warmly the agent responds to concerns |
+    | Persuasiveness | How assertively the agent moves toward the goal |
+    | Response length | Short punchy replies vs. detailed explanations |
+    | Emoji use | Whether the agent uses emojis in messages |
+
+    Click **Save** when you're satisfied with the configuration.
+
+    <Tip>
+      Start with moderate settings across the board and adjust after you review your first few real conversations. You can update tone settings at any time without disrupting active campaigns.
+    </Tip>
+  </Step>
+
+  <Step title="Set up your first campaign">
+    Navigate to **Campaigns** and click **New Campaign**.
+
+    Configure the following:
+
+    1. **Name** — give your campaign an internal name (e.g., "Summer Roofing Leads – SMS")
+    2. **Agent** — select the agent you just created
+    3. **Channel** — choose **SMS** for your first campaign
+    4. **Phone number** — select a phone number to send from
+    5. **Intro message** — write the opening message your agent sends to new contacts
+    6. **Follow-up messages** — add 1–2 follow-up messages for contacts who don't respond
+    7. **Business hours** — set the days and times your agent is allowed to send messages
+    8. **Qualification goals** — define what information the agent needs to collect (e.g., budget, location, timeline)
+
+    Click **Save Campaign** when done.
+
+    <Note>
+      Campaigns start as **inactive** by default. Your agent won't send any messages until you activate the campaign in the next step.
+    </Note>
+  </Step>
+
+  <Step title="Add contacts">
+    Open your campaign and navigate to the **Contacts** tab. You have two options:
+
+    <Tabs>
+      <Tab title="Import CSV">
+        Click **Import Contacts** and upload a CSV file. At minimum, your CSV must include a `phone` column. You can also map columns to `first_name`, `last_name`, `email`, and any custom fields your campaign uses.
+
+        After the import completes, your contacts appear in the campaign contact list with a status of **New**.
+      </Tab>
+      <Tab title="Sync from GoHighLevel">
+        If your workspace is connected to GoHighLevel, click **Add from GoHighLevel** and select the contacts or contact list you want to enroll. Myna syncs the contact details and enrolls them in the campaign automatically.
+
+        See the [GoHighLevel integration guide](#) for setup instructions.
+      </Tab>
+    </Tabs>
+  </Step>
+
+  <Step title="Launch your campaign">
+    Return to your campaign's main settings page and toggle the campaign status from **Inactive** to **Active**.
+
+    Myna's campaign runner checks active campaigns every minute. Your agent will begin sending intro messages to enrolled contacts during your configured business hours.
+
+    <Warning>
+      Make sure your business hours are set correctly before activating. Messages sent outside of business hours will be queued and delivered when the next allowed window opens.
+    </Warning>
+
+    You can monitor conversation progress in real time from the **Contacts** tab — click any contact to see the full message history.
+  </Step>
+</Steps>
+
+## What happens next
+
+Once your campaign is active, Myna handles the conversation automatically:
+
+- **New contacts** receive your intro message at the next scheduled send window
+- **Replies** are processed by the AI agent, which decides whether to answer, ask a qualification question, handle an objection, or book an appointment
+- **Qualified leads** get moved into your appointment flow and land on your calendar
+- **Unresponsive contacts** receive your configured follow-up messages on your chosen schedule
+
+<CardGroup cols={2}>
+  <Card title="Understanding Agents" icon="robot" href="/concepts/agents">
+    Deep-dive into agent configuration and tone settings.
+  </Card>
+  <Card title="Understanding Campaigns" icon="bullhorn" href="/concepts/campaigns">
+    Learn about message sequences, business hours, and qualification goals.
+  </Card>
+  <Card title="Managing Contacts" icon="users" href="/concepts/contacts">
+    Import contacts, view history, and manage contact status.
+  </Card>
+  <Card title="Account Setup" icon="gear" href="/account-setup">
+    Configure your workspace, invite team members, and set roles.
+  </Card>
+</CardGroup>

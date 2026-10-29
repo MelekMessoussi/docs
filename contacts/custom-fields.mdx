@@ -1,0 +1,118 @@
+---
+title: "Build Custom Contact Fields to Capture Your Lead Data"
+sidebarTitle: "Custom Fields"
+description: "Add custom fields to your contacts to capture business-specific data, reference values in campaign messages, and connect them to AI qualification goals."
+---
+
+Standard contact fields cover the basics — name, phone, email, address — but every business collects different information. Custom fields let you extend the contact record with any additional data your team needs, from property type and budget range to preferred appointment time or homeowner status.
+
+Custom fields you create appear on the contact detail page and can be filled in manually, imported via CSV, or synced automatically from GoHighLevel.
+
+## Field Types
+
+When you create a custom field, you choose the type of data it stores:
+
+| Type | Description |
+|---|---|
+| **Single Line** | A single line of free text — ideal for short answers like a name, city, or brief description. |
+| **Multi Line** | A multi-line text area for longer responses or notes. |
+| **Values** | A numeric or open-ended value field — useful for budgets, quantities, or scores. |
+| **Currency** | A numeric field formatted as a currency amount. |
+| **Phone** | A phone number field with format validation. |
+| **Date Picker** | A calendar date selector. |
+| **Dropdown (Single)** | A pre-defined list where only one value can be selected. |
+| **Dropdown (Multiple)** | A pre-defined list where multiple values can be selected. |
+| **Choosing Options** | A flexible multi-select field from a pre-defined list. |
+| **Radio Select** | Single-select from a short list of options displayed as radio buttons. |
+| **Checkbox** | A multi-select field rendered as checkboxes. |
+
+For Dropdown (Single), Dropdown (Multiple), Choosing Options, and Radio Select fields you define the available options when you create the field.
+
+## Organizing Fields into Groups
+
+Custom fields are organized into **groups**, which are collapsible sections on the contact detail page. Create a group for each category of information — for example, a "Property Details" group for real estate or a "Vehicle Info" group for auto dealers.
+
+<Tip>
+  Plan your groups before you start creating fields. Keeping related fields together makes the contact detail page easier to scan and reduces the chance of duplicating information.
+</Tip>
+
+## Creating a Custom Field
+
+<Steps>
+  <Step title="Open Custom Fields settings">
+    Go to **Settings** → **Custom Fields** in the left sidebar.
+  </Step>
+  <Step title="Create or select a group">
+    Custom fields must belong to a group. Click **Add Group** to create a new one and give it a name, or select an existing group to add fields to it.
+  </Step>
+  <Step title="Add a field to the group">
+    Inside the group, click **Add Field**. Enter a **Field Name** — this is the human-readable label shown on the contact detail page.
+  </Step>
+  <Step title="Choose the field type">
+    Select the field type from the dropdown. If you choose Dropdown (Single), Dropdown (Multiple), Choosing Options, or Radio Select, add your predefined options in the **Options** list.
+  </Step>
+  <Step title="Add a placeholder or description (optional)">
+    A **Placeholder** is the hint text shown inside the input when it is empty. A **Description** adds a brief explanation below the field label to guide your team.
+  </Step>
+  <Step title="Save the field">
+    Click **Save**. The field is immediately available on all contact detail pages in your workspace and in any qualification goal configuration.
+  </Step>
+</Steps>
+
+## Field Keys and Merge Tags
+
+Every custom field has an automatically generated **field key** — a short, lowercase identifier derived from the field name (spaces and special characters are replaced with underscores). The field key is used to reference this field in campaign messages and AI prompts.
+
+To insert a custom field value into a campaign message or prompt, use the merge tag format:
+
+```
+{{custom.field_key}}
+```
+
+For example, a field named "Property Type" would have the key `property_type`, and you would reference it in a message as:
+
+```
+Hi {{first_name}}, I understand you're interested in a {{custom.property_type}} property.
+```
+
+<Note>
+  Field keys are generated from the field name at creation time and cannot be changed afterward. Choose clear, descriptive names so the resulting key is easy to read and use in merge tags.
+</Note>
+
+## Best Practices
+
+<Accordion title="Keep field names clear and descriptive">
+  Field keys are auto-generated from the field name. Avoid names that produce confusing keys — for example, a field named "Q1 2024 Budget?" produces the key `q1_2024_budget`. Clear, noun-based names like "Annual Budget" or "Home Square Footage" produce cleaner, more readable merge tags.
+</Accordion>
+
+<Accordion title="Group related fields">
+  Put fields that belong together in the same group. A contact detail page with one well-named group of five fields is much easier to use than ten ungrouped fields scattered at the bottom of the page.
+</Accordion>
+
+<Accordion title="Use Checkbox or Radio Select for simple choices">
+  Instead of a free-text field for yes/no or small fixed lists, use a Radio Select or Checkbox field. It enforces consistent values and makes filtering easier.
+</Accordion>
+
+<Accordion title="Avoid duplicating standard fields">
+  Myna already has standard fields for phone, email, address, and notes. Create custom fields only for data that is not covered by the standard set.
+</Accordion>
+
+## Using Custom Fields in Qualification Goals
+
+Custom fields integrate directly with Myna's qualification system. When configuring a campaign, you can add a **Qualification Goal** that targets a custom field — for example, "Ask the contact for their property budget and save the answer to the `property_budget` field."
+
+The AI agent will ask the appropriate question, capture the answer, and store it in the custom field on the contact record automatically.
+
+## Syncing Custom Fields from GoHighLevel
+
+If your workspace is connected to GoHighLevel, you can map GHL custom fields to Myna custom fields using the **Custom Field Mapping** tool in the Integrations page. When you import contacts from GHL, their custom field values are written directly into the mapped Myna fields.
+
+See the [GoHighLevel integration guide](/integrations/gohighlevel) for details on connecting and running a field mapping sync.
+
+## Enabling and Disabling Fields
+
+Each custom field and each group has an **Enabled** toggle. Disabled fields are hidden from the contact detail page but their data is preserved. This is useful for archiving fields that are no longer actively used without deleting their historical data.
+
+## Reordering Fields and Groups
+
+Drag fields within a group to reorder them. Drag groups to change the order they appear on the contact detail page. The order is saved automatically.

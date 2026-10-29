@@ -1,0 +1,126 @@
+---
+title: "Myna Workspaces: Multi-Client Setup and Configuration"
+sidebarTitle: "Workspaces"
+description: "Workspaces are isolated environments holding your agents, campaigns, contacts, and billing. Learn how to configure and manage workspaces."
+---
+
+A workspace is the top-level container for everything in your Myna account. Every agent you build, every campaign you run, every contact you import, and every integration you connect belongs to a specific workspace. Nothing crosses the boundary between workspaces — they are completely isolated from each other.
+
+When you first register, Myna creates a default workspace for you automatically. Most individual users and small teams operate from a single workspace. Agencies and businesses with multiple brands or clients typically create one workspace per client.
+
+## What lives in a workspace
+
+<CardGroup cols={2}>
+  <Card title="Agents" icon="robot">
+    All AI personas and their tone configurations, knowledge bases, and conversation history.
+  </Card>
+  <Card title="Campaigns" icon="bullhorn">
+    All outreach programs, message sequences, qualification goals, and enrolled contacts.
+  </Card>
+  <Card title="Contacts" icon="users">
+    All lead records, conversation history, qualification data, and tags.
+  </Card>
+  <Card title="Phone numbers" icon="phone">
+    Dedicated phone numbers for SMS campaigns and GoHighLevel numbers for multi-channel campaigns.
+  </Card>
+  <Card title="Integrations" icon="plug">
+    GoHighLevel OAuth connections, Google Calendar links, and any other third-party integrations.
+  </Card>
+  <Card title="Billing" icon="credit-card">
+    Message credit balance, usage history, payment methods, and plan settings.
+  </Card>
+</CardGroup>
+
+## Workspace settings
+
+Access your workspace settings from **Settings** in the left sidebar. The settings available to you depend on your role within the workspace.
+
+### Name and logo
+
+Your workspace name appears in the app header and in the workspace switcher. Update it to reflect your business or client name. Upload a logo to make the workspace visually identifiable when switching between multiple workspaces.
+
+### Timezone
+
+The workspace timezone determines the default timezone used for business hours, scheduling, and reporting. Set it to match the location of your contacts or your business — whichever is more relevant for your outreach timing.
+
+<Warning>
+  Changing the workspace timezone affects all campaigns in the workspace. Review your campaign business hours after changing the timezone to make sure your send windows are still correct.
+</Warning>
+
+### Contact field configuration
+
+Define the custom fields that appear on every contact record in your workspace. Custom fields let you capture industry-specific data — such as "Service Type", "Property Square Footage", or "Monthly Spend" — that your agents can collect through conversation.
+
+Configure custom fields from **Settings → Contact Fields**.
+
+### Role permissions
+
+Workspace owners can customize which actions each role (Admin, User) is allowed to perform within the workspace. This lets you tailor access control to match your team's workflow without giving everyone full admin access.
+
+## Multi-workspace setups for agencies
+
+If you manage outreach for multiple clients, Myna's agency model lets you create a dedicated workspace for each client and manage them all from a single login.
+
+Each client workspace is completely isolated:
+- Separate agents with separate personas
+- Separate campaigns and contact lists
+- Separate phone numbers
+- Separate billing and credit balances
+- Separate integrations (each client's own GoHighLevel connection)
+
+This isolation ensures that client A's contacts never appear in client B's campaigns, and that each client's agent is tuned specifically for their brand and audience.
+
+### Creating a new workspace
+
+Agency owners and admins can create additional workspaces from the agency control panel:
+
+1. Click the workspace name in the top-left corner to open the workspace switcher
+2. Select **Manage Agency** (visible to agency accounts)
+3. Click **New Workspace**
+4. Enter the workspace name and timezone
+5. Click **Create**
+
+The new workspace is immediately available in your workspace switcher. Switch to it to begin configuration.
+
+### Allocating credits to workspaces
+
+In an agency setup, message credits are managed at the agency level and allocated to individual workspaces. From the agency control panel:
+
+1. Open **Agency Settings → Workspaces**
+2. Find the workspace you want to top up
+3. Click **Allocate Credits** and enter the amount
+4. Confirm the allocation
+
+Credits allocated to a workspace are drawn from the agency's central credit pool.
+
+<Note>
+  Workspace-level billing is tracked independently per workspace. You can see credit usage per workspace from the agency dashboard to understand which clients are consuming the most messaging capacity.
+</Note>
+
+## Switching between workspaces
+
+Click the workspace name in the top-left corner of the app to open the workspace switcher. All workspaces you have access to are listed here. Click any workspace to switch to it.
+
+When you switch workspaces, your entire session context changes — the agents, campaigns, contacts, and settings you see all belong to the workspace you switched to. Your role may also be different in each workspace (you might be an owner in one and a user in another).
+
+<Tip>
+  Your browser remembers which workspace you were last active in. When you log back in, you're dropped into the same workspace you were using when you logged out.
+</Tip>
+
+## Inviting users to a workspace
+
+Add team members to a workspace from **Settings → Team Members**. Each user you invite is assigned a role that controls their access level within that specific workspace.
+
+Users can belong to multiple workspaces simultaneously, but their role and permissions apply per workspace. A user can be an admin in one workspace and a standard user in another.
+
+See [Account Setup](/account-setup#user-roles) for a full breakdown of each role's permissions.
+
+## Upgrading to an agency
+
+If you started with a single workspace and now need to manage multiple clients, you can upgrade your account to an agency without losing any existing data.
+
+From **Settings → Account**, click **Upgrade to Agency**. Enter your agency name and confirm. Myna converts your existing workspace into the first workspace under your new agency and grants you agency-level access to create and manage additional workspaces.
+
+<Info>
+  Upgrading to agency status does not affect your existing campaigns, agents, contacts, or billing. Your current workspace and all its data remain intact under the new agency structure.
+</Info>

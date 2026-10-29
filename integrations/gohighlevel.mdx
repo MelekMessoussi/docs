@@ -1,0 +1,165 @@
+---
+title: "Connect Myna to GoHighLevel for Contact Sync"
+sidebarTitle: "GoHighLevel"
+description: "Authorize Myna to access your GoHighLevel sub-account, sync contacts by tag, trigger Myna campaigns from GHL workflows, and map custom fields."
+---
+
+GoHighLevel (GHL) is a popular CRM and marketing automation platform used by agencies, sales teams, and service businesses. Myna integrates with GoHighLevel so you can import your existing contacts, trigger Myna campaigns directly from GHL workflows, and keep contact status synchronized between both platforms — all without manual data entry.
+
+The integration connects one Myna workspace to one GHL sub-account (location). Contacts imported from GHL become standard Myna contacts available for any campaign.
+
+## What the Integration Does
+
+<CardGroup cols={2}>
+  <Card title="Contact sync" icon="arrow-right-arrow-left">
+    Import contacts from your GHL sub-account into Myna by filtering on GHL tags, previewing the list, and selecting which contacts to bring over.
+  </Card>
+  <Card title="Workflow triggers" icon="bolt">
+    Use GHL Marketplace Custom Actions to enroll contacts into Myna campaigns directly from your GHL automation workflows — no manual step required.
+  </Card>
+  <Card title="Real-time webhooks" icon="webhook">
+    When a contact is created or updated in GHL, a webhook notifies Myna and queues the contact for review. You can accept or dismiss each incoming contact.
+  </Card>
+  <Card title="Status tag mirroring" icon="tag">
+    As contacts advance through Myna campaign stages, Myna writes status tags back to GHL (e.g., `myna-status-in conversation`) so your GHL pipeline stays current.
+  </Card>
+</CardGroup>
+
+## Connecting Your GoHighLevel Account
+
+<Steps>
+  <Step title="Open Integrations">
+    Go to **Integrations** in the left sidebar. You will see the **LeadConnector** card (GoHighLevel's API platform name).
+  </Step>
+  <Step title="Start the connection">
+    Click **Connect**. Myna redirects your browser to the GoHighLevel authorization page.
+  </Step>
+  <Step title="Select your sub-account">
+    On the GHL authorization page, choose the sub-account (location) you want to connect to this Myna workspace and click **Allow**.
+  </Step>
+  <Step title="Return to Myna">
+    GHL redirects you back to Myna. The LeadConnector card now shows a green **Connected** badge and displays the name of the connected sub-account.
+  </Step>
+</Steps>
+
+<Warning>
+  Each Myna workspace can only be connected to one GHL sub-account at a time. If you need to connect a different sub-account, disconnect the current one first. GHL access tokens expire periodically — if the card shows **Reconnect required**, click **Reconnect** to refresh the authorization.
+</Warning>
+
+## Syncing Contacts from GoHighLevel
+
+Once connected, you can import contacts from your GHL sub-account into Myna.
+
+<Steps>
+  <Step title="Open the sync wizard">
+    Click the **⋯** menu on the LeadConnector card and select **Sync Contacts**. The Sync Contacts modal opens.
+  </Step>
+  <Step title="Filter by GHL tags">
+    Select one or more tags from your GHL location. Only contacts that have at least one of the selected tags will be included. Leave the tag filter empty to preview all contacts.
+  </Step>
+  <Step title="Preview the contact list">
+    Myna fetches matching contacts from GHL and shows you a preview. Contacts already imported into Myna are marked **Already imported**.
+  </Step>
+  <Step title="Select contacts to import">
+    Check the contacts you want to import, or use **Select all** to pick the entire filtered list.
+  </Step>
+  <Step title="Import">
+    Click **Import**. Myna creates new contact records for each selected contact and skips any that already exist (matching by phone number). Existing contacts have any blank fields filled in from GHL data.
+  </Step>
+</Steps>
+
+<Note>
+  Imported contacts start with **Unassigned** status. Assign them to a campaign from the Contacts page or enroll them in bulk using **Add to Campaign** from the LeadConnector action menu.
+</Note>
+
+## Enrolling GHL Contacts into Campaigns
+
+After syncing contacts, you can add them to a Myna campaign directly from the integration:
+
+1. Click the **⋯** menu on the LeadConnector card and select **Add to Campaign**.
+2. Choose the campaign and select the GHL contacts to enroll.
+3. Click **Add**. Myna begins enrolling contacts — for large lists this may take a moment and you can track progress in the modal.
+
+To remove contacts from a campaign without deleting them, use **Remove from Campaign** from the same menu.
+
+## Triggering Myna from GHL Workflows
+
+Myna is available as a **Marketplace Custom Action** inside GHL's workflow builder. This lets you enroll contacts into Myna campaigns and remove them from campaigns directly from any GHL automation — no manual sync required.
+
+<Steps>
+  <Step title="Install Myna in GHL Marketplace">
+    In GoHighLevel, go to **Marketplace** and find the Myna app. Install it and authorize the connection using the **Allow** button on the Myna consent page. If your Myna workspace is already connected, the authorization completes automatically.
+  </Step>
+  <Step title="Add a Custom Action to a GHL workflow">
+    Open a GHL workflow and add an **Action** step. Search for **Myna** in the action list. You will see options such as **Add to Campaign** and **Remove from Campaign**.
+  </Step>
+  <Step title="Configure the action">
+    Select the target campaign from the dropdown (Myna fetches your campaign list dynamically). Save the workflow step.
+  </Step>
+  <Step title="Publish the workflow">
+    When a GHL contact hits this workflow step, GHL calls Myna's API, which looks up or creates the contact and enrolls them in the campaign automatically.
+  </Step>
+</Steps>
+
+## Tag-Based Campaign Assignment
+
+You can also trigger campaign enrollment by adding a specific tag to a contact in GHL. Myna monitors for tags in the format:
+
+```
+myna-campaign-<campaign-name>
+```
+
+For example, adding the tag `myna-campaign-solar-outreach` to a GHL contact will:
+
+1. Import the contact into Myna if they don't already exist.
+2. Assign them to the **Solar Outreach** campaign (case-insensitive name match).
+3. Set their status to *Preparing Campaign*.
+4. Add the tag `myna-status-preparing campaign` back to their GHL record.
+
+<Warning>
+  Only the `myna-campaign-` prefix is supported. The older `myna-` format (without `campaign-`) is no longer recognized.
+</Warning>
+
+## Status Tag Mirroring
+
+As a contact progresses through a Myna campaign, their status is reflected back to their GHL contact record as a tag. This lets your GHL pipeline stay in sync with what Myna is doing:
+
+| Myna Status | Tag Added to GHL |
+|---|---|
+| Unassigned | `myna-status-unassigned` |
+| Preparing Campaign | `myna-status-preparing campaign` |
+| Initial Outreach | `myna-status-initial outreach` |
+| In Conversation | `myna-status-in conversation` |
+| Following Up | `myna-status-following up` |
+| Won | `myna-status-won` |
+| Opt-Out | `myna-status-opt-out` |
+| Cold | `myna-status-cold` |
+| Warm | `myna-status-warm` |
+
+Status tags follow the pattern `myna-status-<status in lowercase>`. Myna removes all existing `myna-status-*` tags and adds the new one each time the status changes, so exactly one status tag is present on the GHL contact at all times.
+
+## Custom Field Mapping
+
+Myna can import GHL custom field values alongside contacts. Use the **Custom Field Mapping** action in the LeadConnector menu to:
+
+1. Browse the custom fields defined in your GHL sub-account.
+2. Map each GHL field to an existing Myna custom field or create a new one automatically.
+3. Apply the mapping to a selection of contacts — Myna fetches each contact's GHL field values and writes them into the mapped Myna fields.
+
+This is useful for pulling rich CRM data (property details, budget ranges, lead scores) out of GHL and making it available to the Myna AI agent.
+
+See [Custom Fields](/contacts/custom-fields) for details on how to create Myna custom fields and use them in campaigns.
+
+## Pending Contact Review
+
+When GHL sends a webhook for a newly created or updated contact, Myna holds the contact in a **Pending** review queue rather than importing it automatically. This gives you control over which GHL contacts enter Myna.
+
+From **Integrations → LeadConnector**, click the notification for pending contacts to open the review queue. For each contact you can choose **Accept** (creates the contact in Myna) or **Dismiss** (discards without creating).
+
+## Disconnecting GoHighLevel
+
+To remove the integration, click the **⋯** menu on the LeadConnector card and select **Disconnect**. This deletes the stored access tokens and removes the connection from your workspace.
+
+<Note>
+  Disconnecting does not delete contacts that were already imported into Myna. Your existing contact records and their data are preserved. You can reconnect at any time to resume syncing.
+</Note>

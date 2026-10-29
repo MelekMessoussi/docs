@@ -1,0 +1,112 @@
+---
+title: "Create and Manage Client Workspaces in Agency Mode"
+sidebarTitle: "Workspaces"
+description: "Create isolated client workspaces under your agency, allocate credits, switch between clients, and invite clients to manage their own environments."
+---
+
+In agency mode, every client gets their own workspace — a fully isolated environment with its own agents, campaigns, contacts, phone numbers, and billing balance. Nothing crosses between workspaces: a contact in one client's workspace is invisible to every other client, and campaigns run entirely within the workspace they belong to. This isolation lets you manage dozens of clients from a single agency account without ever risking a data leak between them.
+
+## Creating a New Workspace
+
+<Steps>
+  <Step title="Go to the Agency Dashboard">
+    In the top navigation, click your agency name or the **Agency** menu to open the Agency Dashboard.
+  </Step>
+  <Step title="Open the Workspaces tab">
+    Select **Workspaces** from the agency sidebar. You'll see a list of all existing client workspaces and their credit balances.
+  </Step>
+  <Step title="Click Create Workspace">
+    Click the **Create Workspace** button in the top-right corner.
+  </Step>
+  <Step title="Enter workspace details">
+    Fill in the workspace **Name** (typically the client's business name) and select the correct **Timezone**. The timezone controls campaign scheduling and message delivery windows for this client.
+  </Step>
+  <Step title="Save and create">
+    Click **Create**. The workspace is created immediately and appears in your workspace list. The agency user who created it is automatically granted owner-level access to the new workspace.
+  </Step>
+</Steps>
+
+<Note>
+Deleting a workspace is permanent and removes all data associated with it — including contacts, campaigns, agents, conversations, and credit history. There is no recovery option. If you need to offboard a client, consider archiving their campaigns and exporting contacts before deleting.
+</Note>
+
+## Switching Between Workspaces
+
+Use the **workspace switcher** in the top navigation bar to move between client workspaces instantly. Click your current workspace name to open the switcher, then select any workspace you have access to. The entire dashboard context — contacts, campaigns, conversations, settings — switches to the selected workspace.
+
+Agency owners and admins can switch to any workspace under the agency. Workspace-level users can only switch to workspaces they've been explicitly invited to.
+
+## What's Inside Each Workspace
+
+Every workspace is completely self-contained:
+
+<CardGroup cols={2}>
+  <Card title="Agents" icon="robot">
+    Each workspace has its own AI agents with their own system prompts, knowledge bases, and conversation rules.
+  </Card>
+  <Card title="Campaigns" icon="megaphone">
+    Campaigns, contact lists, and send schedules are scoped entirely to the workspace. A campaign cannot target contacts from another workspace.
+  </Card>
+  <Card title="Conversations" icon="messages">
+    Inbound and outbound conversations are stored per workspace. Client A's conversation history is never visible in Client B's workspace.
+  </Card>
+  <Card title="Billing Balance" icon="wallet">
+    Each workspace has its own credit balance, allocated from the agency pool. Credits are consumed from the workspace balance, not the agency balance directly.
+  </Card>
+</CardGroup>
+
+## Allocating Credits to a Workspace
+
+Agency credits are purchased at the agency level and then distributed to individual workspaces. A workspace can only send messages if it has credits in its own balance.
+
+<Steps>
+  <Step title="Open Agency Billing">
+    Navigate to **Agency → Billing** from the agency sidebar.
+  </Step>
+  <Step title="Review the workspace allocation table">
+    The Billing page shows every workspace, its current allocated balance, how much has been used, and the usage percentage.
+  </Step>
+  <Step title="Click Allocate on the target workspace">
+    Find the client workspace you want to fund and click **Allocate** in the Actions column.
+  </Step>
+  <Step title="Enter the dollar amount">
+    Enter the amount in USD you want to transfer to the workspace. The equivalent in credits is calculated automatically. Click **Confirm** to complete the transfer.
+  </Step>
+</Steps>
+
+<Warning>
+Credit allocation transfers from the agency balance to the workspace balance are immediate and currently non-reversible through the UI. Allocate thoughtfully to avoid over-funding or under-funding a workspace.
+</Warning>
+
+<Tip>
+Monitor the usage percentage bar for each workspace in the Agency Billing table. When a workspace passes 50% usage, the bar turns yellow; above 80% it turns red. Use this as a signal to top up the agency balance and re-allocate before campaigns pause.
+</Tip>
+
+## Inviting a Client to Their Workspace
+
+Once a workspace is set up and funded, you can invite the client to access it directly. Clients get workspace-admin access by default, so they can manage their own agents, campaigns, and contacts — but they cannot see your agency dashboard or any other client's workspace.
+
+<Steps>
+  <Step title="Open the workspace">
+    Switch to the client's workspace using the workspace switcher.
+  </Step>
+  <Step title="Go to Settings → Users">
+    Navigate to **Settings → Users** within the workspace.
+  </Step>
+  <Step title="Click Invite User">
+    Click **Invite User** and enter the client's email address. Set their role to **Admin** to give them full control of their workspace.
+  </Step>
+  <Step title="Client accepts the invite">
+    The client receives an email with an invite link. Once they click the link and create or log in to their Myna account, they'll land directly in their workspace.
+  </Step>
+</Steps>
+
+<Info>
+Clients invited to a workspace at the workspace level cannot see any other workspaces under your agency. Their view is fully scoped to their own environment.
+</Info>
+
+## Detaching a Workspace
+
+If you need to remove a workspace from your agency (for example, a client who is leaving your service and taking their Myna account independently), you can detach it rather than delete it. Detaching removes the agency association but preserves all workspace data — contacts, campaigns, agents, and conversations remain intact. Only the agency owner can detach a workspace.
+
+To detach, go to **Agency → Workspaces**, open the workspace's options menu, and select **Detach from Agency**.

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Myna",
+  "theme": "mint",
+  "logo": {
+    "light": "/images/wordmark-blue.png",
+    "dark": "/images/wordmark-white.png"
+  },
+  "favicon": "/images/favicon-light.png",
+  "colors": {
+    "primary": "#0460E9",
+    "light": "#0460E9",
+    "dark": "#0893F2"
+  },
+  "navbar": {
+    "links": [
+      {
+        "href": "/changelog",
+        "label": "Changelog"
+      }
+    ]
+  },
+  "navigation": {
+    "products": [
+      {
+        "product": "Platform",
+        "groups": [
+          {
+            "group": "Get started",
+            "hidden": false,
+            "expanded": true,
+            "pages": [
+              "platform/introduction",
+              "platform/quickstart",
+              "platform/account-setup",
+              "changelog"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "hidden": false,
+            "expanded": true,
+            "pages": [
+              "concepts/agents",
+              "concepts/campaigns",
+              "concepts/contacts",
+              "concepts/workspaces"
+            ]
+          },
+          {
+            "group": "Agents",
+            "hidden": false,
+            "pages": [
+              "agents/creating-agents",
+              "agents/tone-personality",
+              "agents/knowledge-bases",
+              "agents/playground"
+            ]
+          },
+          {
+            "group": "Campaigns",
+            "hidden": false,
+            "pages": [
+              "campaigns/creating-campaigns",
+              "campaigns/campaign-messages",
+              "campaigns/qualification",
+              "campaigns/scheduling"
+            ]
+          },
+          {
+            "group": "Contacts & Conversations",
+            "hidden": false,
+            "pages": [
+              "contacts/managing-contacts",
+              "contacts/conversations",
+              "contacts/custom-fields",
+              "contacts/tags"
+            ]
+          },
+          {
+            "group": "Billing & Plans",
+            "hidden": false,
+            "pages": [
+              "billing/credits",
+              "billing/plans"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Workflow Studio",
+        "pages": [
+          "workflow-studio"
+        ]
+      },
+      {
+        "product": "Agency",
+        "groups": [
+          {
+            "group": "Agency",
+            "hidden": false,
+            "pages": [
+              "agency/overview",
+              "agency/workspaces",
+              "agency/users-permissions"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Myna ADK",
+        "pages": [
+          "adk"
+        ]
+      },
+      {
+        "product": "Integrations",
+        "groups": [
+          {
+            "group": "Integrations",
+            "hidden": false,
+            "pages": [
+              "integrations/gohighlevel",
+              "integrations/twilio",
+              "integrations/google-calendar"
+            ]
+          }
+        ]
+      },
+      {
+        "product": "Myna API",
+        "pages": [
+          "api-reference"
+        ]
+      },
+      {
+        "product": "Community",
+        "pages": [
+          "community"
+        ]
+      },
+      {
+        "product": "Announcements",
+        "pages": [
+          "announcements"
+        ]
+      }
+    ]
+  },
+  "appearance": {
+    "default": "system",
+    "strict": false
+  },
+  "search": {
+    "prompt": "Search documentation"
+  },
+  "background": {
+    "color": {
+      "light": "#f3f4f6",
+      "dark": "#000000"
+    }
+  }
+}

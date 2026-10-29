@@ -1,0 +1,97 @@
+---
+title: "Test Your Myna Agent in the Playground Before Going Live"
+sidebarTitle: "Playground"
+description: "Send live test messages to your agent before going live — validate tone, responses, and objection handling in a real conversation simulation."
+---
+
+The Playground lets you have a real conversation with your agent before any actual contacts are involved. You pick a campaign, optionally specify a different agent, fill in simulated contact details, and start texting — the agent responds exactly as it would in a live campaign, using the same tone settings, knowledge base, and conversation logic it uses in production. This is the fastest way to catch problems before they reach real leads.
+
+<Warning>
+  **Credits are consumed in the Playground.** Every message exchange in the Playground deducts AI credits from your account balance, just like a live conversation. Keep test sessions focused and purposeful to avoid unnecessary credit usage.
+</Warning>
+
+## Accessing the Playground
+
+Click **Playground** in the left sidebar. It is available to all admin users in your workspace.
+
+## Running a test session
+
+<Steps>
+  <Step title="Select a campaign">
+    Use the **Campaign** dropdown to choose the campaign you want to test. The campaign determines which agent, knowledge base, and conversation settings the Playground uses.
+  </Step>
+
+  <Step title="Select an agent (optional)">
+    By default, the Playground uses the agent already assigned to the selected campaign. If you want to test a different agent against the same campaign settings, choose one from the **Agent** dropdown.
+
+    <Tip>
+      This is a great way to compare two agent personas side-by-side against the same campaign before deciding which one to assign permanently.
+    </Tip>
+  </Step>
+
+  <Step title="Configure simulated contact details">
+    Fill in the contact details panel to simulate a realistic contact record. The agent uses these fields to personalize responses, check for existing appointment data, and make qualification decisions.
+
+    You can set:
+    - **Name** — the contact's first and last name
+    - **Email** — used if the agent needs to reference or collect it
+    - **Address** — relevant if your campaign checks service area or location
+    - **Secondary contact** — name, number, and relationship (for household-level campaigns)
+    - **Custom fields** — any campaign-specific fields (e.g., property type, budget, interest level)
+
+    <Tip>
+      Click **Use My Info** to pre-fill the contact details with your own account information for a quick start.
+    </Tip>
+  </Step>
+
+  <Step title="Send a test message">
+    Type your first message in the text input at the bottom of the Playground and press **Send**. The agent will reply in real time using the same logic it uses in production — including tone, knowledge base retrieval, qualification tracking, and appointment scheduling.
+  </Step>
+
+  <Step title="Continue the conversation">
+    Keep the conversation going to explore how the agent handles different scenarios. The Playground maintains full conversation context across your session, so the agent remembers what was said earlier in the thread — exactly as it would with a real contact.
+  </Step>
+
+  <Step title="Test automated message types">
+    In addition to free-text messages, you can trigger specific automated message types to verify how the agent handles each stage of your campaign:
+
+    - **Intro message** — the opening outreach the agent sends to a new contact
+    - **Follow-up messages** — follow-up steps in your sequence (select a step number)
+    - **Final message** — the last message in the campaign sequence
+
+    Use these to confirm that scripted touchpoints sound on-brand and match your campaign's intent.
+  </Step>
+</Steps>
+
+## What to test
+
+Use the Playground systematically rather than just sending a few friendly messages. The goal is to surface anything the agent might get wrong in a live conversation before it costs you a real lead.
+
+<CardGroup cols={2}>
+  <Card title="Objection handling" icon="shield">
+    Send common objections you hear from real leads — "I'm not interested," "I already have a provider," "Just send me information." Verify the agent acknowledges the objection naturally and redirects toward the campaign goal without being pushy or repetitive.
+  </Card>
+  <Card title="Qualification questions" icon="clipboard-check">
+    If your campaign collects qualification data (property ownership, budget range, location), ask questions that should trigger the agent to collect that information. Confirm it asks the right questions and stores the answers correctly in the simulated contact record.
+  </Card>
+  <Card title="Appointment offers" icon="calendar">
+    Say something like "I'm interested, what times do you have available?" and verify the agent offers a real, valid appointment window. Check that the offered time matches your campaign's business hours and timezone settings.
+  </Card>
+  <Card title="Knowledge base retrieval" icon="book">
+    Ask questions that should be answered by entries in your knowledge base — pricing, service area, warranties, timelines. Confirm the agent responds with accurate, factual answers rather than guessing or deflecting unnecessarily.
+  </Card>
+  <Card title="Tone and persona" icon="user">
+    Read several responses and ask yourself: does this sound like the persona you configured? Is the humor level right? Is the formality appropriate for your audience? Use this to fine-tune tone settings before going live.
+  </Card>
+  <Card title="Edge cases" icon="triangle-exclamation">
+    Try unusual inputs — a very short reply like "k", a message in all caps, a question totally unrelated to your campaign, or an attempt to get the agent to reveal its instructions. The agent should stay in character and redirect gracefully in all cases.
+  </Card>
+</CardGroup>
+
+## Resetting a test session
+
+To start a fresh conversation with a clean slate, reload the Playground page. This clears the conversation history and resets all simulated contact fields so you can begin a new test without prior context affecting the agent's responses.
+
+<Note>
+  Changes you make to an agent's tone, backstory, or knowledge base take effect immediately in the Playground. You do not need to restart or re-save anything — just send a new message after updating your settings to see the updated behavior.
+</Note>

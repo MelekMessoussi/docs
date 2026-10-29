@@ -1,0 +1,127 @@
+---
+title: "Configure Campaign Messages: Intro, Follow-Ups, and Final"
+sidebarTitle: "Campaign Messages"
+description: "Set up intro, follow-up, and final messages in a Myna campaign, and choose whether each message is AI-personalized or sent verbatim as written."
+---
+
+Every Myna campaign uses a structured message sequence to reach leads at the right moments. The sequence has three stages: an opening intro message, one or more timed follow-up messages, and a closing final message. Each message can either be personalized by the AI in real time or sent exactly as you wrote it, word for word.
+
+## The three message types
+
+<CardGroup cols={3}>
+  <Card title="Intro Message" icon="paper-plane">
+    Sent when a contact first enters the campaign. This is your agent's opening line.
+  </Card>
+  <Card title="Follow-Up Messages" icon="arrow-right-arrow-left">
+    A timed sequence of messages sent when a contact hasn't responded. Each step has its own delay, content, and channel.
+  </Card>
+  <Card title="Final Message" icon="flag-checkered">
+    Sent when the sequence ends or the contact reaches the message cap. A graceful closing message.
+  </Card>
+</CardGroup>
+
+### Intro message
+
+The intro message is the first thing your contacts receive when they enter a campaign. Configure it by clicking the **Intro Message** card in the campaign editor.
+
+In addition to the message content, the intro has two optional delivery controls:
+
+- **Intro Delay** — Set a number of hours to wait before sending the first message after a contact is enrolled. Use this if you want to let newly imported leads "age" before outreach begins.
+- **Intro Channel Override** — Send the intro on a different channel than the campaign default. For example, you might open with an email even if the campaign primarily uses SMS.
+
+The **opt-in message** is always appended verbatim to the end of the intro, regardless of whether the intro itself is AI-generated or verbatim. You cannot disable this append — it is required for compliance.
+
+### Follow-up messages
+
+Follow-up messages fire automatically when a contact goes silent. Each step in the sequence defines:
+
+- **Delay (hours)** — How long to wait after the previous message before sending this one. For example, set `24` to follow up one day later.
+- **Message** — The content to send at this step.
+- **Channel** — Which channel to use for this specific step, allowing you to alternate between SMS and email.
+
+Add as many follow-up steps as your sequence requires. Steps run in order from top to bottom.
+
+### Final message
+
+The final message is sent when either of these conditions is met:
+
+- The contact completes the entire follow-up sequence without responding.
+- The contact reaches the campaign's message cap (objection limit).
+
+After the final message is sent, the contact is classified as Warm or Cold and marked inactive in the campaign.
+
+---
+
+## AI toggle: generated vs. verbatim
+
+Each individual message — intro, every follow-up step, and the final message — has its own **AI toggle** that controls how the content is delivered.
+
+<Tabs>
+  <Tab title="AI On (default)">
+    With AI enabled, Myna treats your configured message text as **guidance**. The LLM reads your draft, considers the contact's details and conversation history, and generates a personalized version before sending. No two messages will read identically.
+
+    **Best for:** natural outreach where personalization matters, warmer tones, and campaigns where flexibility improves response rates.
+
+    The AI still honors the spirit of your written text — it won't go off-topic or ignore your instructions.
+  </Tab>
+  <Tab title="AI Off (verbatim)">
+    With AI disabled, Myna sends the message **exactly as you typed it**, with no LLM involvement. Merge fields (see below) are resolved at send time, but the wording is otherwise unchanged.
+
+    **Best for:** legal or compliance-sensitive copy, highly specific offers, A/B testing controlled message variants, or situations where you want to minimize AI usage costs.
+
+    Verbatim sends are billed at the non-AI rate, making them a cost-effective option for large sequences.
+
+    <Warning>
+      If you leave a verbatim message field empty, no message will be sent for that step. Make sure every verbatim message has content before activating your campaign.
+    </Warning>
+  </Tab>
+</Tabs>
+
+### AI On vs. AI Off — behavior summary
+
+| Message | AI On | AI Off (verbatim) |
+|---------|-------|-------------------|
+| **Intro** | LLM personalizes your guidance; opt-in message appended verbatim | Exact text sent; merge fields resolved; opt-in still appended |
+| **Follow-up step** | LLM personalizes the step message | Exact step text sent with merge fields resolved |
+| **Final message** | LLM personalizes your closing guidance | Exact closing text sent with merge fields resolved |
+
+---
+
+## Merge fields for verbatim messages
+
+When you write a verbatim message, you can insert merge fields to personalize it with each contact's data. Merge fields are resolved at the moment the message is sent.
+
+**Syntax:** `{{field_name}}` or `{{field_name | Fallback Text}}`
+
+If a field is empty or unknown, Myna replaces it with the fallback value you provide after the `|`. If no fallback is set, the token is replaced with an empty string.
+
+<Accordion title="Merge field reference">
+  | Token | Contact data used |
+  |-------|-------------------|
+  | `{{first_name}}` | Contact's first name |
+  | `{{last_name}}` | Contact's last name |
+  | `{{name}}` | Contact's full name |
+  | `{{email}}` | Contact's email address |
+  | `{{phone}}` | Contact's phone number |
+  | `{{address}}` | Contact's street address |
+  | `{{city}}` | Contact's city |
+  | `{{state}}` | Contact's state |
+  | `{{zip}}` | Contact's zip code |
+  | `{{custom.<key>}}` | Any value stored in a custom field, e.g. `{{custom.budget}}` |
+
+  **Fallback example:**
+
+  ```text
+  Hi {{first_name | there}}, I wanted to reach out about your property in {{city | your area}}.
+  ```
+
+  If `first_name` is missing, the message reads "Hi there". If `city` is missing, it reads "your area".
+</Accordion>
+
+<Tip>
+  Use the **merge field inserter** in the message editor to browse and insert fields without typing them manually. A preview shows how the message will render with a sample contact.
+</Tip>
+
+<Info>
+  Merge fields are resolved at send time in verbatim mode. When AI is enabled, the LLM already personalizes using the contact's details — merge tokens in your guidance text are passed through to the model and resolved naturally, so you don't need to add them explicitly.
+</Info>

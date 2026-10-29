@@ -1,0 +1,106 @@
+---
+title: "Configure AI-Powered Lead Qualification in Myna Campaigns"
+sidebarTitle: "Qualification"
+description: "Define the information your AI agent should collect from each lead, and let Myna work those questions naturally into every conversation."
+---
+
+Qualification goals tell your Myna agent what information to gather from each lead as part of the campaign conversation. Rather than firing off a questionnaire, the agent works these questions into the natural flow of the dialogue — asking at appropriate moments and moving on once an answer is collected.
+
+Every campaign can have its own set of qualification goals tailored to what matters most for that outreach: budget, location, timeline, property details, service preferences, or anything else your team needs to qualify a lead.
+
+## How qualification works
+
+When a contact responds to a message, Myna's agent reviews the open qualification goals and decides whether the current turn is a good opportunity to ask one. Once the contact provides an answer, the agent marks that goal as collected and moves to the next uncollected goal. If the contact voluntarily shares information that matches a goal (or any visible custom field), the agent records it without needing to ask again.
+
+Required goals are prioritized — the agent keeps working toward them even if the contact moves the conversation elsewhere. Optional goals are asked when the flow allows, but the agent won't force them if the conversation isn't conducive.
+
+## Add qualification goals to a campaign
+
+<Steps>
+  <Step title="Open the campaign editor">
+    Go to **Campaigns**, find your campaign, and click **Edit**. Navigate to the **Qualification** section.
+  </Step>
+
+  <Step title="Add a new goal">
+    Click **Add Goal**. A goal form opens with the following fields:
+
+    | Field | Description |
+    |-------|-------------|
+    | **Field Key** | The identifier that maps to a contact column or custom field (e.g., `budget`, `timeline`, `city`). |
+    | **Goal / Question** | The instruction your agent uses when asking for this information (e.g., "Ask for the contact's monthly budget for the service"). |
+    | **Description** | Optional additional context for the agent, such as how to frame the question or what range of answers to expect. |
+    | **Required** | Mark the goal as required if the agent should keep pursuing it. Leave unchecked for nice-to-have information. |
+    | **Skip If Already Filled** | When enabled (the default), the agent skips asking for this field if it already has a value on the contact record. Useful for contacts imported with pre-existing data. |
+    | **Max Attempts** | The maximum number of times the agent will try to collect this goal before moving on. Leave blank for unlimited attempts. |
+    | **Order** | The priority order in which the agent attempts goals. Lower numbers are attempted first. |
+  </Step>
+
+  <Step title="Set the field type">
+    Each goal maps to either a **system field** (a standard Contact column) or a **custom field** (a value you've defined in your workspace's custom field configuration).
+
+    | Field Type | Data Types Available | Example `field_key` |
+    |------------|---------------------|---------------------|
+    | **System** | text, email, phone, date | `city`, `state`, `email` |
+    | **Custom** | text, number, date, boolean, email, phone | `budget`, `timeline`, `property_type` |
+
+    Choose the correct data type so Myna validates and stores the collected value properly (e.g., a `number` field rejects free-form text).
+  </Step>
+
+  <Step title="Save and reorder">
+    Click **Save** after adding each goal. Drag goals up or down to reorder them — the agent attempts them in order from top to bottom.
+  </Step>
+</Steps>
+
+## Qualification prompt mode
+
+When your campaign has many custom fields, you can control which ones appear in the agent's qualification prompt:
+
+| Mode | Behavior |
+|------|----------|
+| **All** | Every custom field defined in your workspace is included in the agent's context. The agent can reference and update any of them. |
+| **Select** | You choose a specific subset of custom fields to include. Use this to keep the agent focused on the fields most relevant to this campaign. |
+
+Switch to **Select** mode and check the fields you want included. This is especially useful when you have many custom fields but only a few are relevant to a given campaign's goals.
+
+## Use cases and examples
+
+<CardGroup cols={2}>
+  <Card title="Real estate buyer campaign" icon="house">
+    Collect budget range, desired number of bedrooms, preferred neighborhoods, and purchase timeline. Mark budget and timeline as required; neighborhood preference as optional.
+  </Card>
+  <Card title="Solar leads campaign" icon="sun">
+    Ask for monthly electricity bill, roof ownership status, and property type (residential vs. commercial). Mark electricity bill and ownership as required.
+  </Card>
+  <Card title="Home services campaign" icon="wrench">
+    Collect service type needed, property size, preferred appointment window, and whether the contact is the homeowner. Mark homeowner status as required.
+  </Card>
+  <Card title="B2B outreach campaign" icon="building">
+    Gather company size, current solution in use, decision-making authority, and budget cycle. Mark decision authority and budget as required.
+  </Card>
+</CardGroup>
+
+## Best practices
+
+<Accordion title="Keep goals focused">
+  Limit each campaign to the 3–5 most important pieces of information. Too many goals make conversations feel like interrogations and reduce response rates. Prioritize the fields your team actually uses to qualify a lead.
+</Accordion>
+
+<Accordion title="Only mark truly required fields as required">
+  Use the Required flag sparingly. If a field is marked required, the agent will keep asking for it across multiple messages — which can frustrate contacts. Reserve it for information you genuinely cannot qualify the lead without.
+</Accordion>
+
+<Accordion title="Set a reasonable max attempts value">
+  For required fields, set a max attempts value of 2–3. This prevents the agent from repeatedly asking for the same information if the contact consistently avoids answering, and it gives the conversation room to progress.
+</Accordion>
+
+<Accordion title="Use the description field for agent guidance">
+  The description field is your chance to give the agent more nuanced instructions. For example: "Ask politely and mention that budget flexibility is okay" or "Only ask this if the contact has already confirmed interest." More context leads to better, more natural questions.
+</Accordion>
+
+<Accordion title="Use Skip If Already Filled for pre-populated contacts">
+  Leave **Skip If Already Filled** enabled (the default) whenever you import contacts that already have some fields completed — for example, contacts from a CRM where budget or location is known. The agent will skip those goals automatically and focus only on what's missing.
+</Accordion>
+
+<Tip>
+  If a contact volunteers qualification information unprompted — for example, mentioning their budget in an early reply — the agent captures it automatically without asking. You don't need to prompt for information the contact has already shared.
+</Tip>

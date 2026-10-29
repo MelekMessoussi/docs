@@ -1,0 +1,89 @@
+---
+title: "Myna Subscription Plans, Top-Ups, and Auto-Recharge"
+sidebarTitle: "Plans"
+description: "Understand Myna's subscription plans, monthly credit allowances, one-time top-ups, and how to manage your billing through the dashboard."
+---
+
+Myna offers subscription plans that give your workspace a monthly credit allowance, automatically refreshed at the start of each billing cycle. When your monthly allowance runs low — or if you need extra capacity for a large campaign — you can purchase additional credits as a one-time top-up without changing your plan. All payments are processed securely through Stripe.
+
+## Subscription Plans
+
+Each subscription plan includes a set number of credits that are added to your balance at the start of every billing cycle. Plan credits **reset monthly** — unused subscription credits do not roll over to the next period. Choosing a higher plan increases your monthly credit ceiling and unlocks additional platform features such as more active campaigns, agents, and phone numbers.
+
+If you cancel your subscription, your plan and its benefits remain active through the end of your current billing cycle. After that, your workspace automatically moves to the **Starter** plan.
+
+<Note>
+When your credit balance reaches zero, any active campaigns are automatically paused. They resume as soon as you add more credits — either by waiting for your monthly renewal, purchasing a top-up, or enabling auto-recharge.
+</Note>
+
+## One-Time Credit Top-Ups
+
+Top-ups let you purchase additional credits on demand, outside of your subscription cycle. Unlike subscription credits, **top-up credits roll over** — they stay in your balance until you use them, regardless of billing cycle boundaries.
+
+### How to Purchase a Top-Up
+
+<Steps>
+  <Step title="Open the Billing page">
+    In your dashboard, navigate to **Billing** in the left-hand sidebar.
+  </Step>
+  <Step title="Go to the Balance tab">
+    Click the **Balance** tab at the top of the Billing page to see your current balance and available credit packs.
+  </Step>
+  <Step title="Select a credit pack">
+    Choose the credit pack that fits your needs. Each pack is priced in USD and shows the number of credits you'll receive.
+  </Step>
+  <Step title="Complete checkout">
+    Click **Purchase**. You'll be redirected to a secure Stripe checkout page. Enter your payment details and confirm the purchase.
+  </Step>
+  <Step title="Credits are added instantly">
+    Once payment is confirmed, credits are added to your balance immediately. You can verify the new balance on the **Overview** tab of the Billing page.
+  </Step>
+</Steps>
+
+## Auto-Recharge
+
+Instead of monitoring your balance manually, you can enable auto-recharge to top up automatically when your balance falls below a threshold you define.
+
+<Accordion title="How auto-recharge works">
+When auto-recharge is enabled, Myna checks your balance after every credit deduction. If your balance drops to or below your configured threshold, a payment is triggered off-session using your saved default payment method. The recharge amount is added to your balance immediately upon a successful charge.
+
+You can configure three settings for auto-recharge in **Billing → Balance**:
+
+- **Threshold** — The credit level (expressed in USD) at which the recharge triggers.
+- **Recharge amount** — How many credits (in USD) to add each time.
+- **Monthly limit** — An optional cap on the total credits added via auto-recharge per billing cycle, to prevent unexpected charges.
+</Accordion>
+
+## Managing Your Subscription
+
+<CardGroup cols={2}>
+  <Card title="Upgrade or Downgrade" icon="arrow-up-arrow-down">
+    Change your plan at any time from the Billing page. Upgrades take effect immediately and are prorated — you'll be charged the difference for the remainder of the current period. Downgrades take effect at the next renewal with no refund for the current period.
+  </Card>
+  <Card title="Cancel Subscription" icon="xmark">
+    You can schedule a cancellation from the Billing page. Your plan stays active through the end of the current billing cycle, then your workspace moves to Starter. You can reactivate before the cycle ends.
+  </Card>
+  <Card title="Payment Methods" icon="credit-card">
+    Add, update, or remove payment methods via the Stripe Customer Portal. Click **Manage** next to your current plan on the Billing Overview to open the portal.
+  </Card>
+  <Card title="Transaction History" icon="receipt">
+    View all past payments, including credit pack purchases and subscription invoices, under **Billing → Transactions**. Each transaction shows the date, amount, payment method used, and status.
+  </Card>
+</CardGroup>
+
+## Subscription Credits vs. Top-Up Credits
+
+| | Subscription Credits | Top-Up Credits |
+|---|---|---|
+| **When added** | Start of each billing cycle | Immediately after purchase |
+| **Roll over** | No — reset each cycle | Yes — never expire |
+| **Unlocks plan features** | Yes | No |
+| **Adjustable** | By changing plan | Purchase any amount |
+
+<Tip>
+If you consistently exhaust your monthly subscription credits before the cycle ends, consider upgrading your plan for a larger monthly allowance rather than relying on repeated top-ups — plans are generally more cost-effective for sustained usage.
+</Tip>
+
+## Agency Billing
+
+If your account is in agency mode, billing operates at the agency level. You purchase credits for the agency as a whole and then distribute them to individual client workspaces. See the [Agency Workspaces](/agency/workspaces) page for details on credit allocation.

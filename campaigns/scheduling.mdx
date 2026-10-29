@@ -1,0 +1,101 @@
+---
+title: "Set Business Hours and Response Timing for Campaigns"
+sidebarTitle: "Scheduling"
+description: "Control when your AI agent is allowed to send messages, how long it waits before replying, and how follow-up steps are timed across your campaigns."
+---
+
+Myna gives you precise control over when messages go out. Business hours ensure your agent never contacts leads at awkward times, response delays make conversations feel natural, and per-step follow-up timing lets you space out your outreach over days or weeks. Getting these settings right protects your sender reputation and improves the experience for your contacts.
+
+## Workspace timezone
+
+All scheduling in Myna is based on your workspace's timezone setting. Before configuring business hours for any campaign, make sure your timezone is set correctly.
+
+To update it, go to **Settings → Timezone**, select your timezone from the dropdown, and save. Every campaign in your workspace inherits this timezone as its default.
+
+<Warning>
+  If your workspace timezone is incorrect, business hours will fire at the wrong local times. Set it before you activate any campaigns.
+</Warning>
+
+## Business hours
+
+Business hours define the windows during which your agent is allowed to send outbound messages. You can configure active hours for each day of the week independently, or leave days out entirely to block them.
+
+When you create a new campaign, Myna sets default business hours automatically:
+
+| Day | Default Hours |
+|-----|---------------|
+| Monday – Friday | 8:00 AM – 6:00 PM |
+| Saturday | 10:00 AM – 4:00 PM |
+| Sunday | Closed (no outreach) |
+
+You can adjust these defaults for each campaign in the campaign editor under **Business Hours**.
+
+<Note>
+  Messages that are ready to send but fall outside business hours are queued automatically. They send at the start of the next open window — so a follow-up due at 11 PM on a weekday will go out at 8 AM the following morning (or whenever your configured hours begin).
+</Note>
+
+## Campaign availability status
+
+Myna tracks each campaign's real-time availability status based on business hours and the campaign's active setting. Here's what each status means:
+
+| Status | Meaning |
+|--------|---------|
+| **Online** | The current time is within configured business hours. The agent is actively sending and responding. |
+| **Offline** | The current time is outside business hours. Messages are queued for the next open window. |
+| **Closed** | The current day has no business hours configured. No messages will go out today; they queue for the next open day. |
+| **Always On** | No business hours are set for the campaign. The agent sends at any time, day or night, without restriction. |
+| **Inactive** | The campaign's active toggle is off. No messages are sent or queued regardless of the time. |
+
+<Warning>
+  Setting a campaign to **Always On** by leaving business hours unconfigured means your agent may contact leads late at night or on weekends. This can increase opt-out rates and may conflict with messaging regulations in some regions. Define business hours for every production campaign.
+</Warning>
+
+## Response delay
+
+The response delay controls how many seconds Myna waits after receiving an inbound message before sending a reply. This simulates a human's natural response time, making the conversation feel less automated.
+
+Configure the response delay in the campaign settings under **Response Delay (seconds)**. The default is 15 seconds.
+
+**Why this matters:**
+
+- A response that fires instantly can feel robotic and trigger spam filters on some carriers.
+- A delay of 15–60 seconds is enough to feel natural without frustrating the contact.
+- For higher-volume campaigns, a slightly longer delay also helps manage throughput.
+
+<Tip>
+  Start with a 30-second response delay for SMS campaigns. You can lower it if contacts seem to disengage before receiving a reply, or raise it if you want to mirror a more deliberate human pace.
+</Tip>
+
+## Split text
+
+When **Split Text** is enabled, Myna automatically breaks long outbound messages into multiple SMS segments rather than sending one large block of text. This improves readability on mobile devices and can reduce the chance of messages being flagged by carriers.
+
+Enable split text in the campaign settings. It applies to all outbound messages in the campaign.
+
+<Info>
+  Split text only affects SMS messages. It has no effect on WhatsApp or email channels, where longer content is natively supported.
+</Info>
+
+## Follow-up delays
+
+Each step in your follow-up sequence has its own **Delay (hours)** setting. This controls how long Myna waits after the previous outreach before sending that step's message.
+
+For example:
+
+| Step | Delay | Result |
+|------|-------|--------|
+| Follow-up 1 | 24 hours | Sent 1 day after the intro (if no response) |
+| Follow-up 2 | 48 hours | Sent 2 days after follow-up 1 |
+| Follow-up 3 | 72 hours | Sent 3 days after follow-up 2 |
+
+Follow-up delays respect your business hours. If a follow-up is scheduled to fire at 2 AM, it waits until the start of the next business window before sending.
+
+<Accordion title="Planning your follow-up cadence">
+  A common starting cadence for sales outreach is:
+
+  - **Follow-up 1:** 24 hours after intro — a light nudge for contacts who may have missed the first message.
+  - **Follow-up 2:** 72 hours after follow-up 1 — a slightly different angle or additional value.
+  - **Follow-up 3:** 7 days after follow-up 2 — a final check-in before the closing message.
+
+  Adjust the timing based on your industry and lead temperature. Higher-urgency products (e.g., time-sensitive offers) may warrant shorter gaps, while considered purchases may benefit from giving leads more time between touches.
+</Accordion>

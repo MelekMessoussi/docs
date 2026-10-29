@@ -1,0 +1,116 @@
+---
+title: "Creating and Managing Myna AI Agents for SMS Campaigns"
+sidebarTitle: "Creating Agents"
+description: "Learn how to create a Myna agent, configure its name, identity, timezone, and tone, and assign it to one or more campaigns to start engaging contacts."
+---
+
+An agent is the AI-powered persona that represents your business in every conversation. Each agent has its own name, backstory, timezone, and tone settings — giving you full control over how your brand communicates with contacts. Before you can run a campaign, you need at least one agent configured and assigned to it.
+
+## Creating a new agent
+
+<Steps>
+  <Step title="Open the Agents page">
+    In the left sidebar, click **Agents**. You'll see a list of all agents in your workspace, along with their assigned campaigns and status.
+  </Step>
+
+  <Step title="Click Add Agent">
+    Select **Add Agent** (or **New Agent**) in the top-right corner of the Agents page to open the agent creation form.
+  </Step>
+
+  <Step title="Set the agent name">
+    Enter a display name for your agent. This is the name the agent will use when introducing itself to contacts.
+
+    <Tip>
+      Use a realistic first name that fits your brand — for example, "Alex" or "Jordan." Keep the name consistent across campaigns so contacts who interact with multiple touchpoints recognize the same persona.
+    </Tip>
+  </Step>
+
+  <Step title="Define the agent identity">
+    Fill in the persona details to give your agent a believable, human-like identity:
+
+    | Field | Description |
+    |---|---|
+    | **Role** | The agent's job title as it appears in context (e.g., "Solar Consultant", "Appointment Specialist") |
+    | **Age** | A realistic age that fits the persona |
+    | **Gender** | The agent's gender identity |
+    | **Location** | City or region the agent is "based in" (can match your business location) |
+    | **Backstory** | A short 2–4 sentence bio that makes the agent feel human and memorable |
+
+    <Tip>
+      Use the **Generate** button to let Myna's AI write a backstory and suggest personality traits automatically, based on your business profile and the details you've already filled in.
+    </Tip>
+  </Step>
+
+  <Step title="Select a timezone">
+    Choose the timezone the agent operates in. This is a **required field** — it controls how the agent references times, business hours, and appointment scheduling in conversations.
+
+    Select the timezone that matches your business location or the region where most of your contacts are located.
+  </Step>
+
+  <Step title="Configure tone settings (optional)">
+    Scroll down to the **Tone** section. You can configure the agent's humor, formality, enthusiasm, empathy, persuasiveness, creativity, punctuation style, emoji use, and response length. All of these settings are optional — sensible defaults are applied automatically.
+
+    See [Tone & Personality](/agents/tone-personality) for a full explanation of every setting.
+  </Step>
+
+  <Step title="Attach a knowledge base (optional)">
+    If you have product information, FAQs, or pricing details you want the agent to reference, attach a knowledge base here. Knowledge bases are created separately and can be shared across agents.
+
+    See [Knowledge Bases](/agents/knowledge-bases) for instructions on creating one.
+  </Step>
+
+  <Step title="Save the agent">
+    Click **Save** to create the agent. It will appear in your agents list with an **Inactive** status until it is assigned to a campaign.
+  </Step>
+</Steps>
+
+## Assigning an agent to a campaign
+
+Once your agent is created, you need to assign it to a campaign before it can start sending and receiving messages. You do this from the campaign's settings, not from the Agents page.
+
+<Steps>
+  <Step title="Navigate to Campaigns">
+    Click **Campaigns** in the left sidebar, then open the campaign you want to configure.
+  </Step>
+
+  <Step title="Select the agent">
+    In the campaign settings, find the **Agent** field and choose your agent from the dropdown list.
+  </Step>
+
+  <Step title="Save the campaign">
+    Save your changes. The agent's status on the Agents page will update to **Active** once it has been assigned to at least one campaign.
+  </Step>
+</Steps>
+
+<Note>
+  An agent can be assigned to multiple campaigns simultaneously. This is useful when you want the same brand persona to handle different outreach efforts — for example, a follow-up campaign and a reactivation campaign running at the same time.
+</Note>
+
+## Managing existing agents
+
+From the **Agents** page you can:
+
+- **Edit** any agent's name, identity fields, timezone, or tone settings at any time — changes take effect immediately for new conversations
+- **View assigned campaigns** — each agent card shows which campaigns it is currently powering
+- **Delete** an agent — note that deleting an agent will remove it from any campaigns it is assigned to
+
+<Warning>
+  Deleting an agent is permanent. Unassign the agent from all campaigns before deleting it to avoid disrupting active outreach.
+</Warning>
+
+## Best practices
+
+<CardGroup cols={2}>
+  <Card title="One agent per brand persona" icon="user">
+    Create a distinct agent for each brand voice or persona you operate. Mixing personas across a single agent leads to inconsistent customer experiences.
+  </Card>
+  <Card title="Match the name to your brand" icon="building">
+    Choose a name that feels natural for your industry. A casual solar lead gen campaign may suit "Jake," while a formal financial services campaign may suit "Catherine."
+  </Card>
+  <Card title="Keep the backstory concise" icon="pen">
+    Two to four sentences is enough. A specific, memorable detail — like a hobby or a quirk — makes the agent feel more human without creating details the AI will struggle to support in conversation.
+  </Card>
+  <Card title="Test before going live" icon="flask">
+    Use the [Playground](/agents/playground) to send test messages and verify the agent's tone and responses before assigning it to a live campaign.
+  </Card>
+</CardGroup>

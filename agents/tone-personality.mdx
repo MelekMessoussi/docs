@@ -1,0 +1,175 @@
+---
+title: "Agent Tone and Personality Configuration Guide for Myna"
+sidebarTitle: "Tone & Personality"
+description: "Customize how your Myna agent sounds with eleven configurable tone dimensions — from humor and formality to emoji use and response length."
+---
+
+Tone and personality are what make a Myna agent feel like a real person rather than a chatbot. Every dimension you configure is injected directly into the agent's system prompt and honored in every message — so changes you make here have an immediate and tangible effect on how your agent writes. The eleven tone settings below give you precise control over the agent's voice, from broad personality traits down to punctuation habits.
+
+You'll find all tone settings inside an agent's configuration form under the **Tone** section.
+
+<Info>
+  All tone settings are optional. If you leave a setting unset, Myna applies a sensible default. You can also use the **Generate** button on the agent form to let the AI suggest a cohesive tone combination based on your business profile.
+</Info>
+
+## Personality dimensions
+
+<Accordion title="Humor">
+  Controls how often and how boldly the agent uses humor in responses. Choose the level that matches your brand's voice.
+
+  | Option | Description |
+  |---|---|
+  | **None** | No humor is used, resulting in a very direct tone. |
+  | **Subtle** | Incorporates subtle, understated humor — serious most of the time, with a dry or clever remark on rare occasions. |
+  | **Moderate** | Occasionally incorporates noticeable, friendly humor that adds charm and approachability, but never overwhelms the conversation. |
+  | **Witty** | Frequently employs clever, sharp humor with punchy wordplay and playful banter that keeps the conversation lively and engaging. |
+  | **Absurd** | Constantly makes jokes, insults, or absurd remarks, never missing a chance for a punchline. Use with caution — some responses may be inappropriate. |
+
+  <Warning>
+    **Absurd** humor is explicitly unfiltered and may generate responses that are inappropriate for professional or regulated industries. Use this setting only for audiences where edgy, irreverent humor is expected and accepted. It is not suitable for healthcare, financial services, or B2B contexts.
+  </Warning>
+</Accordion>
+
+<Accordion title="Formality">
+  Sets the overall language register — how polished or casual the agent's writing feels.
+
+  | Option | Description |
+  |---|---|
+  | **Ultra Casual** | Relentlessly informal, with internet slang, shortcuts, and abbreviations. Maximum vibe, minimum professionalism. |
+  | **Casual** | Relaxed with natural friendliness and mild informality. Playful but still clear and professional. |
+  | **Adaptive** | Dynamically adapts to the user's style — mirrors their tone when possible, otherwise defaults to a modern, neutral tone. |
+  | **Semi-Formal** | Strikes a balance between professionalism and conversational language — respectful, clear, but not stiff. |
+  | **Formal** | Consistently uses polished, structured, and professional language — always courteous, precise, and respectful. |
+
+  <Tip>
+    **Adaptive** is a strong default for most use cases. The agent will naturally mirror a relaxed contact and match a professional tone with a more formal one, without you needing to tune it manually.
+  </Tip>
+</Accordion>
+
+<Accordion title="Enthusiasm">
+  Controls how much visible energy and positivity the agent brings to each response.
+
+  | Option | Description |
+  |---|---|
+  | **Deadpan** | Displays the absolute minimum enthusiasm. Monotone, dry, and apathetic — never shows excitement or extra effort. |
+  | **Low** | Responds with very minimal excitement and energy — tone is reserved, factual, and emotionally neutral. |
+  | **Moderate** | Friendly and balanced — shows a natural, approachable energy level that is warm without being overwhelming. |
+  | **High** | Clearly energetic, positive, and encouraging — shows visible excitement and upbeat energy in most conversations. |
+  | **Extreme** | Exuberant, highly animated, and contagious energy — brings a vibrant and dynamic presence to every response. |
+</Accordion>
+
+<Accordion title="Empathy">
+  Governs how much the agent acknowledges and engages with a contact's personal situation or emotional state.
+
+  | Option | Description |
+  |---|---|
+  | **Low** | Detached and impersonal; responses are businesslike, minimal, and transactional. |
+  | **Moderate** | Balanced empathy; professional but approachable and human. |
+  | **High** | Warm, personal, and highly conversational while still mission-aligned. |
+</Accordion>
+
+<Accordion title="Persuasiveness">
+  Determines how assertively the agent steers contacts toward a desired action (such as booking an appointment).
+
+  | Option | Description |
+  |---|---|
+  | **Passive** | Avoids persuasion; simply presents facts or options without any attempt to influence or guide the user. |
+  | **Subdued** | Uses gentle, non-intrusive persuasion — may make polite suggestions but never pushes. |
+  | **Balanced** | Assertive but respectful — clearly guides the user while always remaining polite and allowing space for choice. |
+  | **Assertive** | Proactively tries to influence decisions with strong recommendations and clear calls to action. |
+  | **Aggressive** | Uses intense, insistent, and sometimes pushy persuasion — drives for a specific result and rarely takes no for an answer. |
+
+  <Warning>
+    **Aggressive** persuasion is modeled on a high-pressure sales style. It is designed to push hard toward a result and rarely accepts "no." This setting is inappropriate for most consumer-facing use cases and may violate carrier messaging guidelines if perceived as harassment. Use **Assertive** or **Balanced** instead for the vast majority of campaigns.
+  </Warning>
+</Accordion>
+
+<Accordion title="Creativity">
+  Controls how inventive and expressive the agent's language is — from plain and literal to imaginative and vivid.
+
+  | Option | Description |
+  |---|---|
+  | **Low** | Keeps language straightforward, factual, and literal, with minimal creative flair. |
+  | **Moderate** | Frequently incorporates creative language — original expressions, light wordplay, or analogies. |
+  | **High** | Regularly uses inventive language, vivid imagery, and playful or unexpected turns of phrase. |
+  | **Innovative** | Pushes boundaries with highly imaginative, unconventional, and sometimes surreal expressions. |
+</Accordion>
+
+## Style and formatting options
+
+<Accordion title="Spelling Errors">
+  An on/off toggle that makes the agent intentionally introduce spelling mistakes to feel more human and text-native.
+
+  | Option | Description |
+  |---|---|
+  | **On** | Forces intentional spelling errors on 5–60% of words (randomized). This should feel natural and can override other personality settings. |
+  | **Off** | Avoids spelling errors unless other personality settings naturally compel them. |
+
+  <Tip>
+    Turning this **On** can dramatically increase open and response rates for SMS campaigns targeting younger, consumer audiences — the messages feel like they came from a real person texting on a phone, not a corporate system.
+  </Tip>
+</Accordion>
+
+<Accordion title="Slang Words">
+  An on/off toggle that enables informal street slang, internet abbreviations, and colloquial expressions.
+
+  | Option | Description |
+  |---|---|
+  | **On** | Uses slang in 5–60% of responses (randomized). Includes street slang, abbreviations, "lol", "lmao", and similar expressions. |
+  | **Off** | No slang unless compelled by other personality settings, which in that case will override this. |
+</Accordion>
+
+<Accordion title="Punctuation">
+  Sets how strictly the agent follows punctuation rules.
+
+  | Option | Description |
+  |---|---|
+  | **None** | No punctuation, not even periods. |
+  | **Minimal** | Punctuation in about 30% of text; mostly omitted. |
+  | **Normal** | Conversational, with a 50% chance the final period is left off. |
+  | **Precise** | Author-level, flawless punctuation in every message. |
+</Accordion>
+
+<Accordion title="Emoji Use">
+  Controls how frequently the agent includes emojis in its responses.
+
+  | Option | Description |
+  |---|---|
+  | **None** | Absolutely zero emojis. |
+  | **Minimal** | 5% chance of an emoji appearing in a response. |
+  | **Sometimes** | 15% chance of emoji(s) in a response. |
+  | **Often** | Uses emojis creatively and often, including non-standard tokens like `^_^` or `o-o`. |
+</Accordion>
+
+<Accordion title="Response Length">
+  Sets the target word count range for each agent reply.
+
+  | Option | Description |
+  |---|---|
+  | **Extremely Short** | Ultra-brief acknowledgement or phrase. Target: 1–5 words. |
+  | **Short** | Very brief response. Target: 5–15 words, usually one short sentence. |
+  | **Moderate** | Concise but conversational. Target: 10–35 words, one or two sentences. |
+  | **Wordy** | Expanded explanation when helpful. Target: 30–100 words, two to four sentences. |
+  | **Verbose** | Detailed explanation. Target: 80–200 words for when persuasion or full context is needed. |
+
+  <Note>
+    Response length is a guideline, not a hard rule. The agent will prioritize clarity and moving the conversation toward its goal — if a slightly longer message is needed to explain value or handle an objection, it may exceed the guideline slightly.
+  </Note>
+</Accordion>
+
+## Recommended presets for common use cases
+
+Different industries and campaign types benefit from different combinations of tone settings. The table below gives you a starting point.
+
+| Use Case | Formality | Humor | Enthusiasm | Empathy | Persuasiveness | Response Length |
+|---|---|---|---|---|---|---|
+| **B2B Sales** | Semi-Formal | Subtle | Moderate | Moderate | Balanced | Moderate |
+| **Consumer Lead Gen (Solar, Home Services)** | Casual | Moderate | High | High | Assertive | Short |
+| **Re-engagement / Win-back** | Adaptive | Subtle | Moderate | High | Subdued | Moderate |
+| **Appointment Reminders** | Semi-Formal | None | Low | Moderate | Subdued | Short |
+| **Real Estate** | Adaptive | Subtle | Moderate | High | Balanced | Moderate |
+| **Compliance-Sensitive Industries** | Formal | None | Low | Moderate | Passive | Wordy |
+
+<Tip>
+  After configuring tone settings, head to the [Playground](/agents/playground) to send test messages and confirm the agent's voice matches your expectations before assigning it to a live campaign.
+</Tip>

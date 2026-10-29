@@ -1,0 +1,124 @@
+{
+  "projectType": "saas",
+  "projectName": "Myna",
+  "projectDescription": "Myna is an AI-powered SMS and messaging agent platform that automates sales outreach, lead qualification, and appointment scheduling through conversational AI campaigns.",
+  "theme": "almond",
+  "primaryColor": "#8d320a",
+  "lightColor": "#1a1723",
+  "darkColor": "#cba8d4",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guide",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "account-setup"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/agents",
+              "concepts/campaigns",
+              "concepts/contacts",
+              "concepts/workspaces"
+            ]
+          },
+          {
+            "group": "Agents",
+            "pages": [
+              "agents/creating-agents",
+              "agents/tone-personality",
+              "agents/knowledge-bases",
+              "agents/playground"
+            ]
+          },
+          {
+            "group": "Campaigns",
+            "pages": [
+              "campaigns/creating-campaigns",
+              "campaigns/campaign-messages",
+              "campaigns/qualification",
+              "campaigns/scheduling"
+            ]
+          },
+          {
+            "group": "Contacts & Conversations",
+            "pages": [
+              "contacts/managing-contacts",
+              "contacts/conversations",
+              "contacts/custom-fields",
+              "contacts/tags"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/gohighlevel",
+              "integrations/twilio",
+              "integrations/google-calendar"
+            ]
+          },
+          {
+            "group": "Billing & Plans",
+            "pages": [
+              "billing/credits",
+              "billing/plans"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Agency",
+        "groups": [
+          {
+            "group": "Agency Features",
+            "pages": [
+              "agency/overview",
+              "agency/workspaces",
+              "agency/users-permissions"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI SMS and multi-channel messaging agent for automated sales outreach",
+    "Configurable agent personas with tone, humor, formality, and empathy controls",
+    "Automated lead qualification with custom qualification goals and rules",
+    "Appointment scheduling and calendar integration via Google Calendar and HighLevel",
+    "Multi-step campaign management with follow-up sequences and intro/final messages",
+    "GoHighLevel (GHL) CRM integration for contact sync and workflow automation",
+    "Twilio SMS integration for phone number management and message delivery",
+    "Knowledge base with RAG (retrieval-augmented generation) for agent context",
+    "Playground for testing agent responses before going live",
+    "Agency mode with multi-workspace management and credit allocation",
+    "AI-toggle for verbatim vs LLM-generated messages with merge field personalization",
+    "Contact custom fields, tags, and activity tracking"
+  ],
+  "publicApiSurface": [
+    "POST /register — user/workspace registration",
+    "POST /login — user authentication",
+    "POST /refresh — JWT token refresh",
+    "POST /logout — session termination",
+    "GET/POST /admin/agents — list and create AI agents",
+    "PUT /admin/agent/:id — update agent configuration",
+    "GET/POST /admin/campaigns — list and create campaigns",
+    "POST /admin/start_campaign — start a campaign for a contact",
+    "GET/POST /admin/contacts — list and manage contacts",
+    "GET /admin/conversations/:phone — fetch conversation history",
+    "GET /admin/knowledge_bases — list knowledge bases",
+    "GET /admin/credit-usage — billing credit usage logs",
+    "GET/POST /admin/custom_fields — manage custom contact fields",
+    "GET /admin/tags — manage contact tags",
+    "POST /playground/generate — test agent response in playground",
+    "GET/POST /myna-crm/highlevel — GoHighLevel OAuth and contact sync",
+    "POST /webhooks/twilio — inbound SMS webhook",
+    "POST /webhooks/highlevel — inbound HighLevel message webhook"
+  ]
+}

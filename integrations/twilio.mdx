@@ -1,0 +1,121 @@
+---
+title: "Set Up Twilio Phone Numbers for SMS Campaigns"
+sidebarTitle: "Twilio"
+description: "Activate the Myna phone system, purchase local or toll-free numbers, complete A2P 10DLC registration, and assign numbers to your SMS campaigns."
+---
+
+Myna uses Twilio under the hood to send and receive SMS messages. Before you can run an SMS campaign, you need at least one phone number registered to your workspace. This guide walks you through activating the phone system, purchasing a number, completing carrier compliance registration, and assigning the number to a campaign.
+
+## How Myna Phone Numbers Work
+
+When you activate the Phone System in Myna, a dedicated Twilio sub-account is created for your workspace. Every number you purchase is tied to that sub-account and to a Twilio Messaging Service, which handles SMS routing, compliance, and delivery.
+
+You do not need a Twilio account of your own — Myna manages the Twilio infrastructure on your behalf and bills you through your Myna credit balance.
+
+## Activating the Phone System
+
+Before you can purchase numbers or run SMS campaigns, you need to activate the Phone System for your workspace.
+
+<Steps>
+  <Step title="Go to Phone System settings">
+    Navigate to **Settings** → **Phone System** (or the **Phone Numbers** section, depending on your workspace plan).
+  </Step>
+  <Step title="Enter your business name">
+    Provide the legal business name for your workspace. This name is used to create your Twilio sub-account.
+  </Step>
+  <Step title="Click Activate">
+    Click **Activate Phone System**. Myna provisions your Twilio sub-account and messaging service in the background. This usually takes a few seconds.
+  </Step>
+</Steps>
+
+## Purchasing a Phone Number
+
+<Steps>
+  <Step title="Open Phone System">
+    Go to **Settings** → **Phone System** and click **Search for Numbers**.
+  </Step>
+  <Step title="Choose a number type">
+    Select **Local** for a geographic area code or **Toll-Free** for a number starting with 800, 833, 844, 855, 866, 877, or 888. Local numbers are best for conversational outreach; toll-free numbers are best for high-volume broadcast campaigns.
+  </Step>
+  <Step title="Search available numbers">
+    Optionally enter an area code, zip code, or pattern (e.g., `555`) to find numbers matching your preference. Click **Search**.
+  </Step>
+  <Step title="Select and purchase">
+    Choose a number from the results and click **Purchase**. Myna charges the monthly fee from your credit balance and the number is immediately added to your workspace.
+  </Step>
+</Steps>
+
+<Note>
+  The monthly cost of each number is deducted from your Myna credit balance automatically on each renewal date. Make sure your balance stays funded to avoid the number being put on hold. You can view upcoming renewal dates in **Settings → Phone System**.
+</Note>
+
+## A2P 10DLC Compliance Registration
+
+The US carrier ecosystem requires all business SMS senders to register under the **A2P 10DLC** (Application-to-Person, 10-Digit Long Code) framework. Without registration, carriers will filter or block your messages. Myna handles this registration process on your behalf.
+
+The full registration involves three steps, each of which can take time to process:
+
+<Steps>
+  <Step title="Create a business profile">
+    Go to **Settings → Phone System → Business Profile** and enter your legal business information, including business type (LLC, sole proprietorship, etc.), EIN or business registration number, website URL, and a contact authorized to represent the business. Submit for review.
+
+    Twilio reviews this profile and either approves or rejects it, usually within **1–3 business days**.
+  </Step>
+  <Step title="Register your brand">
+    Once your business profile is approved, register your **Brand** in the Phone System settings. Myna submits your brand to TCR (The Campaign Registry) on your behalf.
+
+    Brand approval typically takes **1–5 business days**.
+  </Step>
+  <Step title="Register your messaging campaign">
+    After your brand is approved, register your **Messaging Campaign** by providing a use-case description, sample messages, and opt-in information. Myna pre-fills much of this based on your workspace data.
+
+    Campaign registration can take **2–7 business days** to receive carrier approval.
+  </Step>
+</Steps>
+
+<Note>
+  A2P 10DLC registration can take up to two weeks in total from start to finish, depending on how quickly carriers process your application. Plan ahead — start registration as soon as possible, before you need to run your first campaign.
+</Note>
+
+<Warning>
+  Messages sent before A2P 10DLC registration is complete may be filtered or blocked by US carriers. Registration fees apply and are charged from your credit balance at each step.
+</Warning>
+
+## Assigning a Number to a Campaign
+
+Each campaign must have a phone number assigned to it before it can send SMS messages.
+
+<Steps>
+  <Step title="Open Campaign settings">
+    Go to **Campaigns**, select the campaign you want to configure, and open its **Settings** tab.
+  </Step>
+  <Step title="Select a phone number">
+    Find the **Phone Number** dropdown and select the number you want to use for this campaign. The list shows all active numbers in your workspace.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The campaign will now use the selected number as its sender ID for all outbound SMS messages.
+  </Step>
+</Steps>
+
+<Tip>
+  Each number can be assigned to multiple campaigns, but keep in mind that simultaneous high-volume campaigns on the same number may affect deliverability. If you run several campaigns at the same time, consider purchasing a dedicated number for each.
+</Tip>
+
+## Number Types
+
+<Tabs>
+  <Tab title="Local numbers">
+    Local numbers have a geographic area code (e.g., +1 (415) 555-0100). They tend to have higher answer rates for conversational SMS because contacts recognize the local area code. They are ideal for outreach campaigns where the personal touch matters.
+  </Tab>
+  <Tab title="Toll-free numbers">
+    Toll-free numbers (e.g., +1 (888) 555-0100) carry a professional, established-business connotation and support higher throughput for broadcast messaging. They require a separate toll-free verification process in addition to A2P 10DLC.
+  </Tab>
+</Tabs>
+
+## Releasing a Number
+
+To stop using a number and remove it from your workspace, go to **Settings → Phone System**, find the number in your list, and click **Release**. The number is removed from Twilio and your workspace immediately, and the monthly charge stops at the next billing cycle.
+
+<Warning>
+  Releasing a number is permanent. If that number is assigned to active campaigns, those campaigns will stop sending until you assign a different number. Make sure no active campaigns depend on the number before releasing it.
+</Warning>

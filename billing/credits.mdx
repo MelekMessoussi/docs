@@ -1,0 +1,83 @@
+---
+title: "How Myna Credits Work: AI Costs, Usage, and Tracking"
+sidebarTitle: "Credits"
+description: "Myna uses a pre-purchased credit system. Learn what consumes credits, how costs are calculated, and how to track your usage in the dashboard."
+---
+
+Myna runs on a credit-based system — instead of paying per message after the fact, you pre-purchase credits and spend them as your agents send messages and process AI responses. Every outbound message, inbound message, and AI generation draws from your credit balance, so you always know exactly how much capacity you have before launching a campaign.
+
+## What Consumes Credits
+
+Credits are deducted for three categories of activity:
+
+| Action | Channel | Direction | Credits per Unit |
+|---|---|---|---|
+| SMS message | SMS | Outbound | 0.15 per segment |
+| SMS message | SMS | Inbound | 0.10 per segment |
+| WhatsApp message | WhatsApp | Outbound | 0.35 per segment |
+| WhatsApp message | WhatsApp | Inbound | 0.10 per segment |
+| HighLevel message | HighLevel | Outbound | 0 (HL covers cost) |
+| HighLevel message | HighLevel | Inbound | 0 (HL covers cost) |
+| AI response generation | Any | Any | +0.20 per response |
+
+<Info>
+Credits are denominated in internal units where **10 credits = $1.00 USD**. For example, sending one outbound SMS segment costs 0.15 credits ($0.015).
+</Info>
+
+### SMS Segments
+
+SMS messages are billed per segment. Each segment holds up to **160 characters**. A 320-character message counts as 2 segments and is charged at twice the per-segment rate.
+
+### AI Generation Cost
+
+When your agent generates a reply using its AI model (an LLM call), an additional **0.20 credits** are added on top of the per-segment messaging cost. If a message is sent verbatim — for example, a pre-written campaign blast with no AI response required — the 0.20 AI generation charge does not apply.
+
+<Tip>
+For high-volume broadcast campaigns where every contact receives the same message, disable AI response generation and use a fixed message template. You'll skip the 0.20 AI cost on every single message, which can save hundreds of credits on large contact lists.
+</Tip>
+
+## How Credits Are Deducted
+
+Each time a message is sent or received, Myna calculates the cost as:
+
+```
+total_credits = ai_cost + (segment_rate × number_of_segments)
+```
+
+Free credits (promotional or trial credits) are spent first. Once your free balance is exhausted, paid credits are used. If your total balance drops to or below your auto-recharge threshold and you have auto-recharge enabled, Myna will automatically top up your balance using your saved payment method.
+
+<Warning>
+When your credit balance reaches zero, active campaigns are paused automatically. No messages are sent and no charges occur beyond your existing balance. Top up your credits to resume campaigns.
+</Warning>
+
+## Viewing Your Credit Usage Log
+
+Navigate to **Billing → Balance** in your dashboard to see a full, paginated log of every credit deduction. You can filter the log by:
+
+- **Channel** — SMS, WhatsApp, HighLevel, or other
+- **Direction** — Inbound or Outbound
+- **Campaign** — Filter to a specific campaign by name
+
+Each row in the log includes the following fields:
+
+| Field | Description |
+|---|---|
+| Action | The type of activity (e.g., outbound SMS, inbound SMS, AI generation) |
+| Channel | The messaging channel used |
+| Direction | Whether the message was inbound or outbound |
+| Message Preview | The first 100 characters of the message |
+| Segments | Number of SMS segments the message occupied |
+| AI Cost | Credits charged for AI generation (0 if verbatim) |
+| Segment Cost | Credits charged for the message segments |
+| Total Credits | Combined credit cost for the event |
+| Contact Phone | The phone number associated with the contact |
+| Campaign | The campaign this message belonged to (if any) |
+| Timestamp | When the credit was deducted |
+
+<Note>
+The credit usage log is available to all workspace users with at least **user**-level access. Only admins and owners can access billing management functions like purchasing credits.
+</Note>
+
+## Credit Balance vs. USD
+
+Your dashboard displays your credit balance alongside an equivalent USD value. Use the formula `credits × $0.10` to convert any credit amount to dollars. For example, a balance of 500 credits equals $50.00 in messaging capacity.

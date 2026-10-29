@@ -1,0 +1,143 @@
+---
+title: "Managing, Importing, and Segmenting Contacts in Myna"
+sidebarTitle: "Contacts"
+description: "Contacts are the leads your agents reach out to. Import via CSV, sync from GoHighLevel, view conversation history, and manage statuses."
+---
+
+A contact in Myna represents a single lead or customer — identified by their phone number. Every conversation your agent has is tied to a contact record, and every message sent or received is logged against it. Understanding how contacts work is fundamental to running effective campaigns and tracking your pipeline.
+
+## What a contact record contains
+
+Each contact record holds three types of information: core identity fields, behavioral tracking data, and conversation history.
+
+### Core fields
+
+| Field | Description |
+|---|---|
+| **Phone number** | The primary identifier. Every contact must have a unique phone number within your workspace. |
+| **First name / Last name** | The contact's name, used to personalize messages. |
+| **Email** | Email address, collected during qualification or imported. |
+| **Address** | Full or partial address, including street, city, state, ZIP, and country. |
+| **Notes** | Internal notes visible only to your team — not shared with the agent during conversations. |
+| **Tags** | Labels you assign to categorize contacts (e.g., "Warm Lead", "California", "High Value"). |
+| **Lead source** | Where the contact came from (e.g., "Facebook Ad", "GoHighLevel", "CSV Import"). |
+| **Company** | The business or organization the contact is associated with, if applicable. |
+
+### Custom fields
+
+In addition to core fields, your workspace can define custom fields to capture information specific to your business. For example, a roofing company might add a "Roof Age" field; a solar company might add "Monthly Electric Bill."
+
+Custom fields are configured under **Settings → Contact Fields** and appear on every contact record in your workspace. Your agents can collect and update custom field values through natural conversation when those fields are tied to qualification goals.
+
+### Contact status
+
+Every contact has a status that reflects where they are in your outreach pipeline. Statuses help you and your team quickly identify which contacts need attention and which have already converted.
+
+<Accordion title="New">
+  The contact has been added to a campaign but has not yet received the intro message. These contacts are queued for outreach.
+</Accordion>
+
+<Accordion title="Contacted">
+  The intro message has been sent. The contact has not yet replied.
+</Accordion>
+
+<Accordion title="Engaged">
+  The contact has replied to at least one message. The agent is actively managing the conversation.
+</Accordion>
+
+<Accordion title="Qualified">
+  The contact has met all required qualification goals defined in the campaign. Ready for the next step in your sales process.
+</Accordion>
+
+<Accordion title="Appointment Scheduled">
+  An appointment has been booked with this contact through the agent.
+</Accordion>
+
+<Accordion title="Warm">
+  The contact has shown positive interest but hasn't converted yet. Classified by the agent based on engagement signals.
+</Accordion>
+
+<Accordion title="Cold">
+  The contact has shown low engagement or clear disinterest. The agent classifies contacts as cold based on their responses throughout the conversation.
+</Accordion>
+
+<Accordion title="Opted Out">
+  The contact explicitly requested to stop receiving messages. Opted-out contacts are automatically excluded from all future outreach in your workspace.
+</Accordion>
+
+<Accordion title="DNC (Do Not Contact)">
+  Manually flagged contacts that should never receive messages. You can mark a contact DNC at any time from their record.
+</Accordion>
+
+### Additional tracking fields
+
+Myna automatically tracks behavioral data on each contact:
+
+- **Messages sent** — total number of outbound messages sent by your agent
+- **Last inbound** — timestamp of the most recent message received from the contact
+- **Last outbound** — timestamp of the most recent message sent to the contact
+- **Follow-up step** — which step in the message sequence the contact is currently on
+- **Objection count** — how many times the contact has raised an objection
+- **Starred** — mark high-priority contacts with a star for quick access
+
+## Viewing conversation history
+
+Click any contact in the **Contacts** list to open their record. The **Messages** tab shows the complete chronological history of every message sent and received — including the channel, timestamp, and whether each message was sent by the agent or received from the contact.
+
+You can also see:
+- **Appointments** — any appointments booked for this contact
+- **Tasks** — to-do items assigned to your team members related to this contact
+- **Activity log** — a timeline of status changes, field updates, and significant events
+- **Qualification progress** — which goals have been collected and which are still pending
+
+## Importing contacts via CSV
+
+To add contacts to a campaign from a spreadsheet:
+
+1. Navigate to your campaign and open the **Contacts** tab
+2. Click **Import Contacts**
+3. Upload your CSV file
+4. Map your CSV columns to Myna contact fields
+5. Click **Import** to enroll the contacts
+
+**Required column:** `phone` (or any column you map to the phone number field)
+
+**Recommended columns:** `first_name`, `last_name`, `email`
+
+Your CSV can include additional columns for custom fields. During the mapping step, match each column header to the appropriate Myna field.
+
+<Note>
+  Phone numbers are automatically normalized during import. US numbers can be imported with or without the country code — Myna standardizes them to E.164 format (`+1XXXXXXXXXX`) automatically.
+</Note>
+
+<Warning>
+  Contacts whose phone numbers already exist in your workspace are updated rather than duplicated. If the same phone number appears multiple times in your CSV, only the last row is used.
+</Warning>
+
+## Syncing contacts from GoHighLevel
+
+If your workspace is connected to GoHighLevel, you can pull contacts directly from your GHL location without exporting a CSV.
+
+From your campaign's **Contacts** tab, click **Add from GoHighLevel**. Select the contacts, lists, or segments you want to enroll and confirm. Myna imports the contact details and enrolls them in the campaign automatically.
+
+GoHighLevel contacts are synced bidirectionally — qualification data collected by Myna is written back to the contact record in GHL, and contacts can be synced from GHL into Myna when they're updated.
+
+## User takeover
+
+If you want to step into a conversation and reply manually, toggle **User Takeover** on the contact record. While takeover is active, the agent pauses and all inbound messages are routed to you directly. Turn takeover off to hand the conversation back to the agent.
+
+<Tip>
+  User takeover is useful when a contact asks a nuanced question that requires a human response, or when you want to close a warm lead personally before handing them back to automated follow-up.
+</Tip>
+
+## Tagging contacts
+
+Tags let you group and filter contacts across your workspace. Apply tags from the contact record or in bulk from the contacts list.
+
+Common uses for tags:
+- Geographic segmentation ("Southwest", "Texas", "California")
+- Lead temperature ("Hot", "Warm", "Cold")
+- Source attribution ("Facebook Ad", "Referral", "Trade Show")
+- Team ownership ("Sarah's Leads", "Follow-Up Queue")
+
+Tags are workspace-wide — once created, a tag can be applied to any contact in your workspace regardless of which campaign they're in.

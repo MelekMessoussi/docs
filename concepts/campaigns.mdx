@@ -1,0 +1,143 @@
+---
+title: "Myna Campaigns: Message Sequences, Hours, and Contacts"
+sidebarTitle: "Campaigns"
+description: "Campaigns connect your AI agent to a phone number, define your message sequence, set business hours, and control which contacts to reach."
+---
+
+A campaign is the operational core of your Myna outreach. It defines who your agent talks to, which channel it uses, what it says in the opening message and follow-ups, what hours it's allowed to operate, and what it's trying to accomplish. Every active conversation in Myna belongs to a campaign.
+
+## What a campaign contains
+
+<CardGroup cols={2}>
+  <Card title="AI agent" icon="robot">
+    The agent that drives every conversation in this campaign. Controls the persona, tone, and knowledge base used.
+  </Card>
+  <Card title="Phone number" icon="phone">
+    The outbound number contacts receive messages from. Each campaign is assigned one dedicated number.
+  </Card>
+  <Card title="Message sequence" icon="list-ol">
+    The intro message, follow-up messages, and final message sent to contacts who don't respond.
+  </Card>
+  <Card title="Business hours" icon="clock">
+    The days and times your agent is allowed to send outbound messages.
+  </Card>
+  <Card title="Qualification goals" icon="list-check">
+    The specific pieces of information the agent needs to collect before a contact is considered qualified.
+  </Card>
+  <Card title="Response delay" icon="timer">
+    How long the agent waits after receiving an inbound message before sending its reply.
+  </Card>
+</CardGroup>
+
+## Channels
+
+Myna supports several messaging channels. Select a channel when you create your campaign — it determines which integration and phone number type the campaign uses.
+
+<Tabs>
+  <Tab title="SMS">
+    Standard SMS using a dedicated phone number assigned to your workspace. The most common setup for outbound sales campaigns in the US.
+  </Tab>
+  <Tab title="WhatsApp">
+    WhatsApp messaging through the GoHighLevel integration. Requires a connected GoHighLevel account with WhatsApp enabled on your GHL location.
+  </Tab>
+  <Tab title="Email (via GoHighLevel)">
+    Email outreach routed through GoHighLevel. Use this channel when your contacts prefer email communication or when SMS opt-in compliance is a concern.
+  </Tab>
+  <Tab title="Other HighLevel channels">
+    When connected to GoHighLevel, Myna also supports Facebook Messenger, Google Business Messages, and Instagram Direct. Configure these through your GHL integration settings.
+  </Tab>
+</Tabs>
+
+## Message sequence
+
+The message sequence defines the cadence of outbound messages sent to contacts who haven't responded. Configure each message type from the campaign's **Messages** tab.
+
+### Intro message
+
+The intro message is the very first thing a contact receives when they're enrolled in your campaign. It should introduce your agent by name, give the contact a clear sense of who's reaching out and why, and include a question or call-to-action that invites a response.
+
+Keep intro messages short — two to three sentences is ideal for SMS. Contacts decide whether to engage within seconds of reading the first message.
+
+### Follow-up messages
+
+Follow-up messages go to contacts who don't respond to the intro or a previous follow-up. You can configure multiple follow-ups with different timing gaps between each one (for example, follow up after 24 hours, then again after 72 hours).
+
+Each follow-up should approach the outreach from a slightly different angle — new information, a different value proposition, or a softer ask — rather than simply repeating the intro.
+
+### Final message
+
+The final message is sent when a contact reaches the end of your follow-up sequence without converting. It gracefully closes the outreach, thanks the contact for their time, and leaves the door open for them to re-engage in the future.
+
+<Tip>
+  Don't skip the final message. A warm, respectful close is better for your brand than going silent, and contacts who re-engage later will remember you positively.
+</Tip>
+
+## Business hours
+
+Business hours define the windows during which your agent is allowed to send outbound messages. You can configure hours by day of the week.
+
+Set your business hours to match the times your target audience is most likely to respond. Contacts who receive messages outside their expected hours are more likely to opt out.
+
+<Warning>
+  Messages that would be sent outside business hours are held in a queue and delivered when the next allowed window opens. If a contact replies during off-hours, your agent's response is also held until business hours resume.
+</Warning>
+
+## Campaign availability
+
+A campaign's availability setting gives you fine-grained control over when the agent responds to inbound messages, independent of the message-sending schedule.
+
+| Availability | Behavior |
+|---|---|
+| **Online** | Agent responds to inbound messages immediately during business hours |
+| **Offline** | Agent does not respond to any inbound messages |
+| **Closed** | Agent sends a "we're closed" response and holds the conversation until business hours resume |
+| **Always On** | Agent responds to inbound messages 24/7, regardless of business hours settings |
+
+## Campaign status
+
+Campaigns can be set to **Active** or **Inactive** from the campaign settings page.
+
+- **Active** — the campaign runner enrolls new contacts, sends the message sequence, and processes inbound replies
+- **Inactive** — the campaign is paused; no new messages are sent and inbound replies are not processed
+
+Toggle the campaign status at any time without losing any data or conversation history.
+
+## Qualification goals
+
+Qualification goals define the specific pieces of information your agent should collect from each contact before they're considered qualified. Each goal maps to a contact field — either a standard field (like location or email) or a custom field you define.
+
+For each qualification goal, you can configure:
+
+- **Goal description** — what the agent is trying to find out (e.g., "Ask for the contact's monthly budget")
+- **Field** — where the collected data is stored on the contact record
+- **Required** — whether this goal must be completed before the contact can be considered fully qualified
+- **Max attempts** — how many times the agent can ask before moving on
+- **Skip if already filled** — whether to skip this goal if the field already has a value
+
+<Note>
+  The agent collects qualification data through natural conversation — it doesn't send a rigid list of questions. It works qualification goals into the dialogue at the right moment, making the experience feel like a conversation rather than a form.
+</Note>
+
+## Response delay
+
+The response delay is the number of seconds the agent waits after receiving an inbound message before sending its reply. A small delay (30–120 seconds) makes the agent feel more human and gives time for the contact to send a follow-up message before the agent responds.
+
+<Tip>
+  If a contact sends multiple messages in quick succession, Myna batches them and processes them together once the delay expires — so the agent responds to the complete thought rather than each individual message.
+</Tip>
+
+## One contact, one active campaign
+
+A contact can only be enrolled in one active campaign at a time. If you try to add a contact to a second campaign while they're active in another, Myna will alert you. To move a contact to a different campaign, remove them from the current campaign first.
+
+This rule prevents contacts from receiving duplicate or conflicting messages from different campaigns simultaneously.
+
+## Contacts in a campaign
+
+The **Contacts** tab inside a campaign shows every contact enrolled in that campaign and their current status. Click any contact to view their full message history, qualification progress, and contact details.
+
+You can add contacts to a campaign in two ways:
+- **CSV import** — upload a spreadsheet of phone numbers and contact details
+- **GoHighLevel sync** — pull contacts directly from your connected GHL location
+
+See the [Contacts guide](/concepts/contacts) for more on importing and managing contacts.

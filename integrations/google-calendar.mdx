@@ -1,0 +1,108 @@
+---
+title: "Connect Google Calendar for AI Appointment Booking"
+sidebarTitle: "Google Calendar"
+description: "Authorize Google Calendar, configure primary and conflict calendars per campaign, and let your AI agent check availability and book appointments automatically."
+---
+
+When you connect Google Calendar to Myna, your AI agent gains the ability to check your real-time availability and book appointments directly into your calendar — without any manual follow-up from your team. The agent proposes time slots, the contact confirms, and the appointment appears in your Google Calendar automatically.
+
+## How It Works
+
+Your AI agent consults your connected Google Calendar before offering any appointment time. It checks for existing events (including events from other calendars you designate as conflict sources) and only proposes times that are genuinely open. When a contact confirms a time, Myna creates a calendar event and records the appointment in the contact's profile.
+
+Appointments use your workspace's timezone setting, so times displayed to contacts and times written to your calendar are always consistent.
+
+## Connecting Google Calendar
+
+<Steps>
+  <Step title="Open Calendar settings">
+    Navigate to **Calendar** in the left sidebar, then click the **Connections** tab (or go to **Settings → Calendar Connections**).
+  </Step>
+  <Step title="Click Connect Google Calendar">
+    Click **Connect Google Calendar**. Myna opens a Google OAuth authorization dialog.
+  </Step>
+  <Step title="Sign in and authorize">
+    Sign in to the Google account that owns the calendar you want to use. Review the permissions Myna requests — these include reading your calendar events (to check availability) and creating events (to book appointments). Click **Allow**.
+  </Step>
+  <Step title="Confirm the connection">
+    Google redirects you back to Myna. The connected Google account email address is displayed in the Calendar Connections panel, confirming the integration is active.
+  </Step>
+</Steps>
+
+<Tip>
+  Create a dedicated Google Calendar called "Myna Appointments" and connect that calendar specifically for Myna bookings. This keeps AI-booked appointments visually separate from your personal and internal meetings, making it easy to manage your availability at a glance.
+</Tip>
+
+## Configuring the Primary Calendar
+
+The **primary calendar** is where new appointments will be created when the AI agent books a meeting. Each campaign can have its own primary calendar, or multiple campaigns can share one.
+
+<Steps>
+  <Step title="Open campaign calendar settings">
+    Go to **Campaigns**, select a campaign, and open the **Calendar** or **Scheduling** section of its settings.
+  </Step>
+  <Step title="Select the primary Google Calendar">
+    From the **Primary Calendar** dropdown, choose the calendar you want appointments created in. The list shows all calendars available on your connected Google account.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The AI agent for this campaign will now create appointments in the selected calendar.
+  </Step>
+</Steps>
+
+## Adding Conflict Calendars
+
+Conflict calendars are additional Google Calendars that Myna checks for existing events when determining your availability — but it does not create new appointments in them. Use conflict calendars to block off time from personal calendars, company-wide calendars, or other team members' schedules.
+
+<Steps>
+  <Step title="Open campaign calendar settings">
+    In the campaign's **Calendar** settings, find the **Conflict Calendars** section.
+  </Step>
+  <Step title="Add a conflict calendar">
+    Click **Add Conflict Calendar** and choose a calendar from the list. You can add multiple conflict calendars — Myna checks all of them.
+  </Step>
+  <Step title="Save">
+    Click **Save**. From now on, any time slot that is busy on any conflict calendar will be excluded from the times the AI agent can offer.
+  </Step>
+</Steps>
+
+<Info>
+  Conflict calendars are read-only. Myna only reads events from these calendars to detect conflicts. It never creates or modifies events in conflict calendars.
+</Info>
+
+## What Happens When an Appointment Is Booked
+
+When your AI agent and a contact agree on an appointment time, Myna:
+
+1. Creates a new event in your connected **primary Google Calendar** with the contact's name, phone number, and any relevant notes.
+2. Records the appointment on the contact's profile in Myna (visible in the Appointments tab of the Conversations view).
+3. Logs the booking as an activity in the contact's Activity timeline.
+
+The appointment appears in Google Calendar immediately, just like any manually created event.
+
+## Timezone Handling
+
+All appointment times in Myna are tied to your **workspace timezone**, which you configure in **Settings → Workspace**. When the AI agent offers times to a contact, those times are expressed in the workspace timezone. When the event is written to Google Calendar, the timezone is preserved correctly.
+
+<Warning>
+  If your workspace timezone is set incorrectly, appointments may be booked at the wrong time. Verify your workspace timezone in Settings before connecting your calendar and running your first appointment-booking campaign.
+</Warning>
+
+## Sharing One Calendar Across Multiple Campaigns
+
+Multiple campaigns can all point to the same primary Google Calendar. This is the simplest setup if all your team members share one availability calendar. Myna checks for conflicts across all campaigns when computing availability, so two campaigns cannot accidentally double-book the same slot.
+
+If different campaigns serve different team members or different products, assign each campaign its own dedicated primary calendar to keep bookings organized and routed to the right person.
+
+## Viewing Appointments in Myna
+
+All appointments booked by your AI agent are visible in the **Calendar** page in Myna, in both the month/week/day calendar view and the list view. You can filter, edit, or delete appointments directly from the Myna calendar — changes are reflected in Google Calendar automatically.
+
+If you have GoHighLevel connected, appointments from GoHighLevel calendars also appear on the Myna Calendar page alongside your Google Calendar events. See the [GoHighLevel integration guide](/integrations/gohighlevel) for details.
+
+## Disconnecting Google Calendar
+
+To remove the Google Calendar integration, open **Calendar → Connections**, find the connected Google account, and click **Disconnect**. This removes Myna's access to the calendar and disables appointment booking for any campaigns that use it.
+
+<Note>
+  Disconnecting Google Calendar does not delete appointments that have already been booked — those events remain in your Google Calendar. Myna will stop creating new appointments until you reconnect.
+</Note>

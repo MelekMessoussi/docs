@@ -1,0 +1,89 @@
+---
+title: "Create and Configure Your First Myna Campaign"
+sidebarTitle: "Creating Campaigns"
+description: "Learn what a Myna campaign is, how to create one, and which settings control how your AI agent reaches out to leads via SMS, WhatsApp, and email."
+---
+
+A campaign is the core unit of outreach in Myna. It pairs an AI agent with a phone number, a messaging channel, and a set of contacts, then coordinates every intro, follow-up, and closing message on your behalf. Before your agent can start texting or emailing leads, you need at least one campaign configured and active.
+
+<Note>
+  A campaign requires an agent, a phone number, and at least one contact before it can send messages. Make sure you have these ready before activating.
+</Note>
+
+## Create a new campaign
+
+<Steps>
+  <Step title="Open the Campaigns page">
+    Navigate to **Campaigns** in the left sidebar. Click **New Campaign** to open the campaign creation form.
+  </Step>
+
+  <Step title="Name your campaign">
+    Enter a unique **Campaign Name**. This name identifies the campaign throughout the platform and appears in contact records, message logs, and reports. Choose something descriptive, like `Q3 Buyer Outreach` or `Solar Leads – West Region`.
+  </Step>
+
+  <Step title="Select an agent">
+    Choose the **Agent** that will power this campaign from the dropdown. The agent determines the persona, tone, and conversational behavior your contacts will experience. If you haven't created an agent yet, go to **Agents** first and return here when done.
+  </Step>
+
+  <Step title="Assign a phone number">
+    Select the **Phone Number** this campaign will use to send and receive messages. Each phone number can be assigned to one campaign at a time — numbers already in use will be marked accordingly in the dropdown.
+  </Step>
+
+  <Step title="Choose a channel">
+    Set the default **Channel** for outbound messages:
+
+    | Channel | Description |
+    |---------|-------------|
+    | **SMS** | Standard text messages via Twilio |
+    | **WhatsApp** | WhatsApp messages via Twilio |
+    | **Email (via HL)** | Email delivery through your HighLevel integration |
+
+    Individual messages within the campaign can optionally override this default channel.
+  </Step>
+
+  <Step title="Attach a knowledge base (optional)">
+    Select a **Knowledge Base** to give your agent access to specific documents, FAQs, or product information when generating replies. Leave this blank to rely on the agent's built-in training only.
+  </Step>
+
+  <Step title="Configure campaign settings">
+    Expand the **Settings** section and review the following options:
+
+    <CardGroup cols={2}>
+      <Card title="Response Delay" icon="clock">
+        How many seconds Myna waits before sending a reply after receiving an inbound message. A short delay (e.g., 15–60 seconds) makes responses feel more natural and helps avoid spam filters.
+      </Card>
+      <Card title="Split Text" icon="scissors">
+        When enabled, long outbound messages are automatically broken into multiple SMS segments instead of one large block. Recommended for SMS campaigns to improve readability and delivery.
+      </Card>
+      <Card title="Objection Limit" icon="shield-halved">
+        The maximum number of objections a contact can raise before the agent stops engaging and classifies the lead as Warm or Cold. Set this to prevent over-messaging unresponsive leads.
+      </Card>
+      <Card title="Active / Inactive" icon="toggle-on">
+        Controls whether the campaign is live. New campaigns are created in an inactive state. You activate the campaign manually once it's ready.
+      </Card>
+    </CardGroup>
+  </Step>
+
+  <Step title="Save the campaign">
+    Click **Save**. The campaign is created and appears in your campaigns list. It is inactive by default.
+  </Step>
+</Steps>
+
+## After creating your campaign
+
+Once you've saved the campaign, two things need to happen before messages will go out:
+
+1. **Add contacts** — Import or enroll the leads you want this campaign to reach. You can add contacts individually, upload a CSV, or pull them in from a connected HighLevel location.
+2. **Activate the campaign** — Toggle the campaign status to **Active** from the campaign list or the campaign detail view. Myna will begin processing contacts and scheduling outreach according to your message sequence and business hours.
+
+<Tip>
+  Configure your intro, follow-up, and final messages before activating. A campaign with no messages configured will not send anything even when active.
+</Tip>
+
+## Duplicate an existing campaign
+
+If you want to reuse a campaign's structure, click the **Duplicate** option on any existing campaign. Myna copies all settings, messages, and configuration into a new campaign named `[Original Name] (Copy)`. The duplicate is created as **inactive** with no phone number assigned, so you can adjust it safely before going live.
+
+<Info>
+  Duplicating a campaign does not copy its contacts — only the campaign configuration, messages, and agent assignment are carried over.
+</Info>

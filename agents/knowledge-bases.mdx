@@ -1,0 +1,117 @@
+---
+title: "Creating and Using Knowledge Bases with Myna Agents"
+sidebarTitle: "Knowledge Bases"
+description: "Store product details, FAQs, pricing, and policies in a knowledge base so your agent can reference accurate, factual information in every conversation."
+---
+
+A knowledge base is a curated collection of facts and information that your agent draws on when answering questions. Without one, your agent relies entirely on general knowledge and its persona — with one, it can accurately reference your specific products, services, pricing, policies, and FAQs. If a contact asks "What does your service cost?" or "Do you cover my zip code?", the agent will look for the answer in its attached knowledge base before responding.
+
+Knowledge bases work through retrieval-augmented generation (RAG): when the agent receives a message, Myna finds the most relevant entries from the knowledge base and includes them as context, so the agent's response is grounded in your real business information rather than a guess.
+
+## Creating a knowledge base
+
+<Steps>
+  <Step title="Open Knowledge Bases">
+    In the left sidebar, navigate to **Knowledge Bases**. You'll see a list of all existing knowledge bases in your workspace.
+  </Step>
+
+  <Step title="Click New Knowledge Base">
+    Select **New Knowledge Base** to open the creation form.
+  </Step>
+
+  <Step title="Name your knowledge base">
+    Give it a clear, descriptive name so you can identify it easily when attaching it to a campaign — for example, "Solar FAQs", "Roofing Pricing 2024", or "Med Spa Services."
+  </Step>
+
+  <Step title="Add a description (optional)">
+    The description is for your internal reference. Use it to note what the knowledge base covers, which campaigns it's intended for, or when it was last updated.
+  </Step>
+
+  <Step title="Save and open">
+    Click **Save**. The knowledge base is created and you'll land on its detail page, where you can start adding entries.
+  </Step>
+
+  <Step title="Add entries">
+    Click **Add Entry** to add your first piece of information. Each entry can be added in three ways:
+
+    - **Text** — paste or type a plain-text block of factual content directly. Think of each entry as one "fact" or one "topic."
+    - **URL** — provide a link to a web page (such as a product page, FAQ, or service area page) and Myna will extract the content automatically.
+    - **File** — upload a document such as a PDF, Word file, spreadsheet, or image. Myna reads the content and makes it available for retrieval.
+
+    Good examples of text entries:
+
+    ```text
+    Our service area covers all zip codes within 50 miles of Nashville, TN. We do not currently service Kentucky.
+    ```
+
+    ```text
+    Standard installation takes between 6 and 8 hours. Premium installations with battery backup take 1–2 days.
+    ```
+
+    ```text
+    We offer a 25-year panel warranty and a 10-year workmanship warranty on all installations.
+    ```
+
+    Continue adding entries until you've covered all the information your agent will need to answer common contact questions.
+  </Step>
+</Steps>
+
+<Note>
+  There is no strict limit on the number of entries in a knowledge base, but the agent only retrieves the most relevant entries for each message. Keep entries focused on a single topic so retrieval is accurate.
+</Note>
+
+## Attaching a knowledge base to a campaign
+
+Knowledge bases are attached at the campaign level, not directly to an agent. This means different campaigns powered by the same agent can reference different knowledge bases.
+
+<Steps>
+  <Step title="Open the campaign">
+    In the left sidebar, click **Campaigns** and open the campaign you want to configure.
+  </Step>
+
+  <Step title="Select a knowledge base">
+    In the campaign settings, locate the **Knowledge Base** field and choose the knowledge base from the dropdown.
+  </Step>
+
+  <Step title="Save the campaign">
+    Click **Save**. The agent assigned to this campaign will now reference the selected knowledge base in all future conversations.
+  </Step>
+</Steps>
+
+<Tip>
+  You can use the [Playground](/agents/playground) to test your knowledge base by asking the agent questions that should be answered by entries you've added. This confirms the entries are being retrieved and the agent is using them correctly.
+</Tip>
+
+## Managing knowledge bases
+
+From the **Knowledge Bases** page you can:
+
+- **Edit** a knowledge base name or description at any time
+- **Add, edit, or delete** individual entries
+- **Duplicate** a knowledge base to create a modified copy for a different campaign
+- **Delete** a knowledge base — this permanently removes it and all its entries
+
+<Warning>
+  Deleting a knowledge base removes all of its entries permanently and unlinks it from any campaigns it was attached to. Those campaigns will continue to run, but the agent will no longer have access to that information. There is no undo.
+</Warning>
+
+## Best practices for knowledge base entries
+
+<CardGroup cols={2}>
+  <Card title="One topic per entry" icon="list">
+    Break information into focused, single-topic entries. An entry about warranty terms should not also include pricing. Smaller entries are retrieved more accurately.
+  </Card>
+  <Card title="Write in plain, factual language" icon="pen">
+    Avoid marketing language in entries. Write the way you'd answer a question directly: "We charge $X for standard installation" is cleaner than "Our world-class installation starts at just $X."
+  </Card>
+  <Card title="Cover your most common objections" icon="message">
+    Think through the questions contacts ask most often — cost, service area, timeline, warranties, cancellation policy — and make sure each has a dedicated entry.
+  </Card>
+  <Card title="Keep entries current" icon="rotate">
+    Pricing, hours, and availability change. Set a reminder to review your knowledge base entries whenever your offerings change, so the agent never quotes stale information.
+  </Card>
+</CardGroup>
+
+<Note>
+  The agent will only share pricing or other numerical figures that appear explicitly in the knowledge base. If a contact asks for a quote and no pricing entry exists, the agent will redirect toward booking an appointment rather than guessing — protecting you from accidental misquotes.
+</Note>

@@ -1,0 +1,117 @@
+---
+title: "How to Add, Import, and Manage Contacts in Myna AI"
+sidebarTitle: "Contacts"
+description: "Learn how to add contacts manually, bulk import via CSV, sync from GoHighLevel, and manage key contact fields and settings in Myna."
+---
+
+Your contacts are the foundation of every Myna campaign. Each contact represents a person your AI agent will reach out to — and every piece of information you store on that contact helps the agent personalize its conversations and track progress toward your goals.
+
+## Core Contact Fields
+
+Every contact in Myna has a set of standard fields. The table below describes what each field captures and how it is used.
+
+| Field | Description |
+|---|---|
+| **First Name / Last Name** | The contact's full name, displayed throughout the dashboard and used in personalized messages. |
+| **Phone Number** | The primary identifier for a contact. Phone numbers must be unique within your workspace. |
+| **Email** | Optional email address for the contact. |
+| **Address** | Full or structured address (street, city, state, zip, country). |
+| **Contact Type** | Classifies the contact as a **Lead**, **Customer**, or **Employee**. |
+| **Status** | Tracks where this contact is in the campaign lifecycle (e.g., Unassigned, Preparing Campaign, In Conversation, Won, Cold). |
+| **Lead Source** | Where this contact came from (e.g., referral, web form, GoHighLevel import). |
+| **Campaign** | The active campaign this contact is enrolled in. |
+| **Channel** | The communication channel used — defaults to SMS. |
+| **Lead Cost** | Optional cost associated with acquiring this lead. |
+| **Deal Value** | Optional estimated deal or contract value. |
+| **Secondary Contact** | A spouse, partner, or other secondary person associated with this contact, including their name, phone, and relationship. |
+| **Notes** | Free-text notes visible to your team. |
+| **Custom Fields** | Any additional fields you've created in Settings → Custom Fields. |
+
+## Adding a Contact Manually
+
+<Steps>
+  <Step title="Open Contacts">
+    Navigate to **Contacts** in the left sidebar and click **Add Contact**.
+  </Step>
+  <Step title="Fill in contact details">
+    Enter the contact's first and last name, phone number (required), and any other fields that apply — email, address, lead source, and so on.
+  </Step>
+  <Step title="Assign a contact type and campaign">
+    Set the **Contact Type** (Lead, Customer, or Employee) and optionally assign the contact to an existing **Campaign**.
+  </Step>
+  <Step title="Add tags (optional)">
+    Select one or more tags to segment this contact. You can create new tags inline if needed.
+  </Step>
+  <Step title="Save the contact">
+    Click **Save**. The contact is immediately available in your contact list and ready to be enrolled in a campaign.
+  </Step>
+</Steps>
+
+## Importing Contacts via CSV
+
+Use CSV import to add contacts in bulk. The import process accepts CSV or Excel files and supports up to 2,000 contacts per file.
+
+<Steps>
+  <Step title="Prepare your spreadsheet">
+    Create a CSV or Excel file with at least a `phone` column. Optional columns include `first_name`, `last_name`, `email`, `address`, `street_address`, `city`, `state`, `zip_code`, `country`, and `notes`. Column headers must match these names exactly.
+
+    ```csv
+    first_name,last_name,phone,email,lead_source
+    Jane,Smith,+15555550101,jane@example.com,Web Form
+    Carlos,Reyes,+15555550202,,Referral
+    ```
+  </Step>
+  <Step title="Open the import dialog">
+    Go to **Contacts** and click **Import Contacts** (or the upload icon). Select your CSV or Excel file.
+  </Step>
+  <Step title="Set import options">
+    Choose a **Lead Source** to apply to all imported contacts. Optionally, select a **Campaign** to enroll them in immediately and any **Tags** to attach.
+  </Step>
+  <Step title="Review and confirm">
+    Myna previews the import. Contacts with duplicate phone numbers are skipped. Click **Import** to proceed.
+  </Step>
+  <Step title="Check the results">
+    After the import completes, a summary shows how many contacts were created, skipped (duplicates), and any rows that had errors.
+  </Step>
+</Steps>
+
+<Note>
+  Contacts imported without a campaign assignment will be set to **Unassigned** status. You can enroll them in a campaign from the contact list or the contact detail page at any time.
+</Note>
+
+## Syncing Contacts from GoHighLevel
+
+If your workspace is connected to GoHighLevel, you can import contacts directly from your GHL sub-account. See the [GoHighLevel integration guide](/integrations/gohighlevel) for step-by-step instructions on connecting and running a contact sync.
+
+## Managing a Contact
+
+Click any contact in the list to open the contact detail view. From here you can:
+
+- **Edit contact fields** — Update name, email, address, deal value, or any custom field.
+- **Change campaign status** — Move the contact to a different status stage or reassign them to a different campaign.
+- **View message history** — See the full conversation thread between the AI agent and this contact.
+- **Add notes** — Leave internal notes for your team that are not sent to the contact.
+- **Attach files** — Upload documents or images associated with this contact.
+- **Start a campaign** — Enroll this contact in a campaign directly from the detail page by assigning them to the campaign and setting their status to *Preparing Campaign*.
+
+## User Takeover
+
+When you need to step into a conversation personally, toggle **User Takeover** on the contact. This pauses all AI responses for that contact so you can reply manually.
+
+<Note>
+  While User Takeover is active, Myna will not send any automated messages to the contact — the AI is completely paused. Toggle it off when you are done to resume normal AI-driven messaging.
+</Note>
+
+You can also enable User Takeover from the Conversations view without navigating to the contact detail page.
+
+## Starring a Contact
+
+Click the star icon on any contact to mark it as starred. Starred contacts appear in the **Starred** filter in the Conversations view, making it easy to find your most important leads at a glance. Click the star again to remove it.
+
+## Viewing Contacts in Kanban Mode
+
+Switch between **List** and **Kanban** views using the toggle in the top-right of the Contacts page. Kanban mode groups contacts by status so you can see your pipeline at a glance and track how leads are moving through each stage.
+
+<Tip>
+  Use the **Search** bar to quickly find a contact by name, phone number, or email — especially useful when your contact list grows large.
+</Tip>

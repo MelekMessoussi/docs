@@ -1,0 +1,81 @@
+---
+title: "Create and Use Tags to Segment Your Contacts in Myna"
+sidebarTitle: "Tags"
+description: "Create and apply tags to segment your contacts by lead source, interest, or any other category, then filter your inbox and contact list by tag."
+---
+
+Tags are short labels you attach to contacts to classify and group them. A contact can have any number of tags, and tags make it easy to filter your contact list, identify where leads came from, and target specific groups in your campaigns.
+
+Common uses for tags include marking lead source (e.g., `facebook-ad`, `referral`, `trade-show`), product interest (`solar`, `roofing`, `hvac`), follow-up priority (`hot-lead`, `not-now`), or geographic area (`los-angeles`, `east-bay`).
+
+## Creating a Tag
+
+<Steps>
+  <Step title="Open Tags settings">
+    Navigate to **Settings** → **Tags** in the left sidebar.
+  </Step>
+  <Step title="Add a new tag">
+    Click **Add Tag**, type the tag name, and press **Save**. Tag names are plain text — use hyphens or underscores instead of spaces for consistency (e.g., `web-form` instead of `web form`).
+  </Step>
+  <Step title="Confirm the tag">
+    The tag appears in your workspace tag list and is immediately available to assign to any contact.
+  </Step>
+</Steps>
+
+You can also create tags **inline** while editing a contact or importing contacts — you don't have to go to the Settings page first.
+
+## Applying Tags to a Contact
+
+<Steps>
+  <Step title="Open the contact">
+    Navigate to **Contacts** and click any contact to open the detail view.
+  </Step>
+  <Step title="Find the tags section">
+    Tags are displayed at the top of the right panel in the Conversations view, or in the contact edit form. Click the **+ Add tag** input.
+  </Step>
+  <Step title="Select or create a tag">
+    Start typing to search existing tags. Click a tag from the dropdown to apply it. If you type a name that does not match any existing tag, Myna offers to create it on the spot — click **Create "[tag name]"** to add it.
+  </Step>
+  <Step title="Remove a tag">
+    Click the **×** on any applied tag to remove it from the contact.
+  </Step>
+</Steps>
+
+Changes to tags on a contact are saved immediately.
+
+## Applying Tags During CSV Import
+
+When bulk-importing contacts from a CSV file, you can apply one or more tags to all contacts in that import batch at once. Select the tags from the **Tags** field in the import dialog before you upload the file.
+
+<Note>
+  Tags applied during import are added to every contact in that file. If you need different tags for different groups of contacts, split them into separate import files.
+</Note>
+
+## Filtering Contacts by Tag
+
+Use the **Search** bar on the Contacts page to search by tag name. In the Conversations view, you can also filter the inbox list by searching for a tag — any conversation associated with a contact that has that tag will appear in the results.
+
+## Tags from GoHighLevel
+
+If your workspace is connected to GoHighLevel, tags from your GHL location are imported alongside contacts when you run a contact sync. Existing GHL tags are matched to Myna tags by name — if a tag with the same name already exists in Myna, the contact is associated with it; if not, a new tag is created automatically.
+
+<Tip>
+  Standardize your tag naming conventions across Myna and GoHighLevel before running a sync. Consistent lowercase, hyphenated names (e.g., `solar-lead`) make it much easier to manage your tag library over time.
+</Tip>
+
+## Managing Your Tag Library
+
+From **Settings** → **Tags**, you can:
+
+- **Rename a tag** — Click the tag name to edit it. All contacts associated with the tag are updated automatically.
+- **Delete a tag** — Click the delete icon next to a tag. This removes the tag from all contacts in your workspace. This action cannot be undone.
+
+<Warning>
+  Deleting a tag removes it from every contact in your workspace immediately. If you are unsure whether a tag is still needed, consider renaming it to an archive name (e.g., `archived-solar-2023`) rather than deleting it.
+</Warning>
+
+## Tag Sync with GoHighLevel Workflows
+
+Myna also writes status tags back to GHL contacts as they progress through campaigns. For example, when a contact's status changes to *In Conversation*, Myna adds the tag `myna-status-in conversation` to their GHL record. This keeps your GHL pipeline in sync without any manual work.
+
+See the [GoHighLevel integration guide](/integrations/gohighlevel) for full details on how tag-based automation works in both directions.

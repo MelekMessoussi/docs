@@ -1,0 +1,66 @@
+---
+title: "Myna for Agencies: Manage Multiple Clients at Scale"
+sidebarTitle: "Overview"
+description: "Agency mode gives you a master view of all client workspaces, centralized billing, and team management tools — all from a single Myna account."
+---
+
+Agency mode is designed for marketing agencies, consultancies, and managed-service providers who run AI messaging on behalf of multiple clients. Instead of juggling separate logins for each client, you manage every client workspace from a single agency account — with centralized billing, role-based team access, and full isolation between clients so their data never mixes.
+
+## Key Agency Features
+
+<CardGroup cols={2}>
+  <Card title="Workspace Management" icon="grid-2">
+    Create and manage a dedicated workspace for each client. Every workspace has its own agents, campaigns, contacts, and settings — completely isolated from every other client.
+  </Card>
+  <Card title="Credit Allocation" icon="coins">
+    Purchase credits at the agency level and distribute them to individual client workspaces. You control exactly how much messaging capacity each client has at any time.
+  </Card>
+  <Card title="Team & User Management" icon="users">
+    Add agency admins who can see and act across all workspaces. Invite clients directly into their own workspace with workspace-admin access — they see only their data.
+  </Card>
+  <Card title="Per-Workspace Settings" icon="palette">
+    Each workspace has its own name and timezone, controlling campaign scheduling and message delivery windows independently for each client.
+  </Card>
+</CardGroup>
+
+## How Agency Mode Works
+
+In Myna, the agency is the top-level entity. Workspaces live beneath the agency and inherit its billing relationship. Here's how the layers fit together:
+
+- **Agency** — Holds the master credit balance, contains all workspaces, and is managed by agency owners and admins.
+- **Workspaces** — Individual environments for each client. Contacts, agents, campaigns, and conversations are all scoped to a workspace.
+- **Users** — People can be invited at the agency level (to see all workspaces) or at the workspace level (to see only one client's workspace).
+
+## Agency Roles
+
+Myna uses two distinct role layers — agency-level roles and workspace-level roles — so you can control visibility and permissions at each layer independently.
+
+| Role | Level | What They Can Do |
+|---|---|---|
+| **Owner** | Agency | Full control: create/detach workspaces, manage billing, manage team, update agency settings |
+| **Admin** | Agency | Create workspaces, invite users, view all workspace data — but cannot manage billing or agency settings |
+| **Admin** | Workspace | Full access within a single workspace: agents, campaigns, contacts, billing view |
+| **User** | Workspace | Limited access within a single workspace: view conversations, manage contacts |
+
+<Note>
+Agency owners and admins have cross-workspace visibility across all workspaces under the agency. Workspace-level users only see the specific workspace they've been invited to.
+</Note>
+
+## Upgrading to Agency Mode
+
+If you have an existing Myna account, you can upgrade it to agency mode from the dashboard. Once enabled, your existing workspace becomes the first workspace under your new agency account, and you can begin creating additional client workspaces immediately.
+
+<Info>
+Upgrading to agency mode does not affect your existing campaigns, agents, contacts, or billing. Your current workspace is preserved and simply placed under the new agency umbrella.
+</Info>
+
+## What's Next
+
+<CardGroup cols={2}>
+  <Card title="Create and Manage Workspaces" icon="folder-plus" href="/agency/workspaces">
+    Learn how to create client workspaces, allocate credits, and invite clients to their environments.
+  </Card>
+  <Card title="Users and Permissions" icon="shield-check" href="/agency/users-permissions">
+    Set up your agency team and configure role-based access for both agency and workspace users.
+  </Card>
+</CardGroup>
