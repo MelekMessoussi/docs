@@ -15,22 +15,7 @@ A Myna runtime has two main components that work together:
 
 This runtime is built into every agent and works the same way on every channel, whether a message arrives by SMS, WhatsApp, email or webchat. There is nothing to install or set up.
 
-```mermaid
-%%{init: {'flowchart': {'nodeSpacing': 14, 'rankSpacing': 28, 'subGraphTitleMargin': {'top': 8, 'bottom': 18}}}}%%
-flowchart LR
-    C(["Customer<br/>message"]) --> A
-    subgraph RT["Myna Runtime"]
-        direction LR
-        A{{"Checks<br/>before"}} --> M["AI model<br/>understands<br/>and plans"]
-        M --> T["Allowed<br/>actions"]
-        T --> Z{{"Checks<br/>after"}}
-    end
-    Z --> R(["Reply to<br/>customer"])
-    classDef stage stroke:#e8743b,stroke-width:2px
-    classDef gate stroke:#e8743b,stroke-width:2px,stroke-dasharray:6 4
-    class C,M,T,R stage
-    class A,Z gate
-```
+![Image](/images/image-4.png "Image")
 
 ```mermaid
 ```
@@ -52,6 +37,17 @@ flowchart LR
 ## **Why not just write one big prompt?**
 
 Many AI agents are built on a single long prompt that holds everything at once: the personality, the business rules, the tool instructions, the prices and the formatting. But with this strategy as a business adds rules and edge cases, the prompt keeps growing, and problems start to show.
+
+<Columns cols={2}>
+  <Column>
+    <Card icon="sparkles">
+    </Card>
+  </Column>
+  <Column>
+    <Card icon="sparkles">
+    </Card>
+  </Column>
+</Columns>
 
 <br />
 
