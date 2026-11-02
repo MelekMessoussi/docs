@@ -110,6 +110,49 @@ Every message your agent receives goes through the same eight stages, in the sam
 
     ![Image](/images/image-7.png "Image")
 
-    <br />
+    These checks cover common situations that can be handled automatically:
+
+    <table>
+      <colgroup>
+        <col width="162" />
+        <col width="497" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**Check**</th>
+          <th>**What it catches**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Duplicates**</td>
+          <td>The same message arriving more than once</td>
+        </tr>
+        <tr>
+          <td>**Opt-outs**</td>
+          <td>Contacts who have asked not to be messaged</td>
+        </tr>
+        <tr>
+          <td>**Takeover**</td>
+          <td>Conversations a teammate has taken over</td>
+        </tr>
+        <tr>
+          <td>**Channel compliance**</td>
+          <td>Rules that apply to the channel the message came from</td>
+        </tr>
+        <tr>
+          <td>**Message caps**</td>
+          <td>Limits on how many messages can be sent</td>
+        </tr>
+        <tr>
+          <td>**Business hours**</td>
+          <td>Times when your agent isn't allowed to reply</td>
+        </tr>
+      </tbody>
+    </table>
   </Step>
 </Steps>
+
+<Info>
+  Because these checks are code, they behave the same way every time. An opt-out is enforced by the software itself, so it never depends on the model remembering a rule.
+</Info>
