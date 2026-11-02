@@ -292,19 +292,37 @@ These eight rules hold on every turn, on every channel, for every agent.
 
 <Columns cols={2}>
   <Column>
-    <Card title="T**ools never send**" icon="sparkles">
+    <Card title="T**ools never send**" icon="send">
       Only the runtime sends messages, and only after the post-gates approve. A tool built to send messages can't even be registered.
     </Card>
 
-    <Card icon="sparkles">
+    <Card title="**One change per step**" icon="list-1-2">
+      At most one tool that changes data runs per step, and a call that already succeeded returns its result instead of running twice.
+    </Card>
+
+    <Card title="**A bounded loop**" icon="sparkles">
+      Planning runs for a small, capped number of steps. Any tool failure ends it, and the customer still gets an honest reply.
+    </Card>
+
+    <Card title="**A fixed order of priority**" icon="sparkles">
+      Safety comes first, then truth and your instructions, then the channel, then the persona's voice.
     </Card>
   </Column>
   <Column>
-    <Card title="**Tools can be removed**" icon="sparkles">
+    <Card title="**Tools can be removed**" icon="filter">
       Each layer can only narrow the tools on offer. A tool that isn't enabled for the current turn is refused, even one that only reads data.
     </Card>
 
-    <Card icon="sparkles">
+    <Card title="**No false confirmations**" icon="sparkles">
+      A failed booking, move or handoff can never be reported as done. A reply can only claim what a tool proved.
+    </Card>
+
+    <Card title="**Takeover means silence**" icon="sparkles">
+      When someone on your team takes over, the agent stops before any model runs. Incoming messages still reach your team.
+    </Card>
+
+    <Card title="**Facts come from records**" icon="sparkles">
+      Contact fields, answers, appointments and tickets are read from structured records every turn, not remembered from the transcript.
     </Card>
   </Column>
 </Columns>
