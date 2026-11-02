@@ -13,7 +13,7 @@ A Myna runtime has two main components that work together:
 - **The AI model:** the part that understands language. It reads what your customer writes, works out what they need, decides which actions to take and writes the reply.
 - **The control layer:** the software built around the model. It checks every message before the model sees it, gives the model only the information it needs, runs the tools that carry out actions, and checks every reply before it reaches your customer.
 
-The AI model works inside the harness, never on its own. It is called at two moments: once to plan what to do, and once to write the reply. Every other step is handled by software that follows your rules exactly.<br />
+The AI model never works on its own. The control layer decides when it runs, what it sees and what happens to its answers, and enforces your rules exactly, every time.<br />
 
 <Tip>
   **You don't need to write prompts.** You write instructions, choose a persona and select tools in Workflow Studio, and the runtime builds what each stage needs from those choices.
