@@ -159,6 +159,8 @@ Every message your agent receives goes through the same eight stages, in the sam
   <Step title="**Context (assembled in modules)**">
     Your data is never merged into one giant block. Myna keeps them as separate modules, and each stage reads only the modules it needs. The composer, for example, uses your persona to write in the right voice and the channel policy to get the length right.
 
+    ![Image](/images/image-9.png "Image")
+
     <table>
       <colgroup>
         <col width="124" />
@@ -205,6 +207,10 @@ Every message your agent receives goes through the same eight stages, in the sam
         </tr>
       </tbody>
     </table>
+  </Step>
+
+  <Step title="Planner (**reasons, then calls its tools)**">
+    The planner is the part of the agent that thinks. It reads the context, works out what the customer needs and calls tools by name. After each tool returns, it reads the result and decides what to do next. It repeats this for a few steps at most, and it never writes a single word the customer sees.
 
     <br />
   </Step>
