@@ -251,6 +251,29 @@ Every message your agent receives goes through the same eight stages, in the sam
 
     Here is the same booking as data:
 
-    <br /><br />
+    ```json
+    Input · what the tool filled in
+    {
+      "time": "tue 10:00",
+      "calendar": "cleaning",
+      "contact": "from record"
+    }
+    Evidence · what the tool returned
+    {
+      "ok": true,
+      "outcome": "booked",
+      "summary": "Tue 10:00"
+    }
+    ```
+
+    <Warning>
+      Tools that change data, such as booking an appointment or updating a contact, are treated as critical. Only one of them can run per step, and if a call has already succeeded, running it again returns the first result instead of booking twice.
+    </Warning>
+  </Step>
+
+  <Step title="Composer (**writes the reply)**">
+    Once the planner is done, a single composer writes the reply, using confirmed evidence only. Its voice comes from your persona, set with the persona sliders or learned by the Emulator from real messages. Its length and layout come from the channel policy, so the same answer can be a short text on SMS and a fuller message by email.
+
+    <br />
   </Step>
 </Steps>
