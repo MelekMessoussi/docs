@@ -283,14 +283,3 @@ Every message your agent receives goes through the same eight stages, in the sam
     </Info>
   </Step>
 </Steps>
-
-```mermaid
-%%{init: {'flowchart': {'nodeSpacing': 18, 'rankSpacing': 34}}}%%
-flowchart LR
-    S(["Start"]) --> I["Agent node<br/>Intake"]
-    I -->|needs booking| B["Agent node<br/>Booking"]
-    I -->|needs support| U["Agent node<br/>Support"]
-    classDef stage stroke:#e8743b,stroke-width:2px
-    class S,I,B,U stage
-    linkStyle default stroke:#e8743b,stroke-width:1.5px
-```
