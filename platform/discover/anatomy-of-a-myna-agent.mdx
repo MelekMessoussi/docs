@@ -273,19 +273,22 @@ Every message your agent receives goes through the same eight stages, in the sam
     | **You're booked for Tuesday at 10:00.** | The booking failed | The reply is repaired, or replaced with a safe line |
     | **Text that repeats the agent's internal instructions** | Not applicable | Caught as prompt leakage before it reaches the customer |
   </Step>
+  <Step title="Send (sends the message then land)">
+    Only the runtime sends messages, and only after the post-gates approve. In a workflow with more than one agent node, the contact then lands on the right next step. Routing uses deterministic conditions, and the workflow graph is verified so it can always run.
+
+    ![Image](/images/image-14.png "Image")
+
+    Every turn is fully traced. When you test an agent, the logs show the plan, the tool calls and the checks behind each reply.<br />
+  </Step>
 </Steps>
 
 ```mermaid
-%%{init: {'flowchart': {'nodeSpacing': 18, 'rankSpacing': 30}}}%%
+%%{init: {'flowchart': {'nodeSpacing': 18, 'rankSpacing': 34}}}%%
 flowchart LR
-    C["Composer"] -->|One reply| PG{{"Post-gates<br/>Claims checked<br/>against evidence"}}
-    PG -->|Passes| S(["Send"])
-    PG -->|Fails| R["Repair once"]
-    R --> C
-    PG -->|Fails again| SL(["✕ Safe line"])
+    S(["Start"]) --> I["Agent node<br/>Intake"]
+    I -->|needs booking| B["Agent node<br/>Booking"]
+    I -->|needs support| U["Agent node<br/>Support"]
     classDef stage stroke:#e8743b,stroke-width:2px
-    classDef gate stroke:#e8743b,stroke-width:2px,stroke-dasharray:6 4
-    class C,S,R,SL stage
-    class PG gate
+    class S,I,B,U stage
     linkStyle default stroke:#e8743b,stroke-width:1.5px
 ```
