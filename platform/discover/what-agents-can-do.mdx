@@ -18,22 +18,6 @@ Not quite. A simple language model on its own is very good at writing text, but 
 
 ![Image](/images/image-2.png "Image")
 
-```mermaid actions={false}
-flowchart TB
-    subgraph L["A language model on its own"]
-        direction TB
-        L1(["Customer message"]) --> L2["Language model"]
-        L2 --> L3["Text reply only"]
-    end
-    subgraph R["A Myna agent"]
-        direction TB
-        R1(["Customer message"]) --> R2["Your agent"]
-        R2 --> R3["Appointment booked<br/>Contact updated<br/>Reply sent"]
-    end
-    classDef agent fill:#4363dd,stroke:#4363dd,color:#ffffff
-    class R2 agent
-```
-
 A Myna agent uses the model to understand the customer, then uses its tools to finish the job itself. The table below shows where the two differ:
 
 <table>
