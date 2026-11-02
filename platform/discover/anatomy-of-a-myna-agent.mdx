@@ -11,7 +11,7 @@ Every Myna agent runs inside the **Myna Runtime**, the **harness** that sits bet
 A Myna runtime has two main components that work together:
 
 - **The AI model:** the part that understands language. It reads what your customer writes, works out what they need, decides which actions to take and writes the reply.
-- **The harness (the Myna Runtime):** everything built around the model. It checks every message before the model sees it, gives the model only the information it needs, carries out the actions the model asks for, and checks every reply before it reaches your customer.
+- **The control layer:** the software built around the model. It checks every message before the model sees it, gives the model only the information it needs, runs the tools that carry out actions, and checks every reply before it reaches your customer.
 
 The AI model works inside the harness, never on its own. It is called at two moments: once to plan what to do, and once to write the reply. Every other step is handled by software that follows your rules exactly.<br />
 
