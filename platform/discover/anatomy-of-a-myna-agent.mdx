@@ -61,6 +61,33 @@ Many AI agents are built on a single long prompt that holds everything at once: 
 
 Myna splits that work apart. Your agent’s setup is kept in separate modules for instructions, persona, tool rules and knowledge. The rules that must always hold are written into the software itself, outside the prompt. 
 
+<table>
+  <colgroup>
+    <col width="333" />
+    <col width="396" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Instead of**</th>
+      <th>**Myna does this**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**One long prompt that holds everything**</td>
+      <td>Keeps instructions, persona, tool rules and knowledge as separate modules, each used only where it is needed</td>
+    </tr>
+    <tr>
+      <td>**Hoping the AI remembers a rule**</td>
+      <td>Enforces the rule in code, so it applies every single time</td>
+    </tr>
+    <tr>
+      <td>**Letting the AI act and write in one go**</td>
+      <td>Does the work first, then writes the reply from what actually happened</td>
+    </tr>
+  </tbody>
+</table>
+
 <Info>
   **The principle behind the runtime:** use a model for judgment and language, and software for anything that requires certainty.
 </Info>
