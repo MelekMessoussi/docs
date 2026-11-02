@@ -333,6 +333,51 @@ Every rule in the runtime has a rank, and a higher rank always wins.
 
 If staying in your persona's playful voice would mean bending a fact, the fact wins. If a channel needs a shorter reply than your persona likes to write, the channel wins. Corrections you approve in the Playground can change how your agent words things, but never the facts it states.
 
+## **What does this look like in practice?**
+
 Here is how a Myna agent handles the situations that most often go wrong with AI agents.
+
+<table>
+  <colgroup>
+    <col width="313" />
+    <col width="388" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**When this happens**</th>
+      <th>**What the runtime does**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**A customer opts out**</td>
+      <td>The opt-out check stops the agent before any model runs</td>
+    </tr>
+    <tr>
+      <td>**A teammate takes over a conversation**</td>
+      <td>The agent goes silent, and new messages go straight to your team</td>
+    </tr>
+    <tr>
+      <td>**The same message arrives twice**</td>
+      <td>The duplicate check stops the second copy</td>
+    </tr>
+    <tr>
+      <td>**A message comes in outside your reply hours**</td>
+      <td>The business hours check keeps the agent from replying</td>
+    </tr>
+    <tr>
+      <td>**A booking fails**</td>
+      <td>The agent can't say the customer is booked, and still sends an honest reply</td>
+    </tr>
+    <tr>
+      <td>**The same booking is requested twice**</td>
+      <td>The second call returns the first result instead of creating a duplicate</td>
+    </tr>
+    <tr>
+      <td>**The planner reaches for a tool you didn't enable**</td>
+      <td>The runtime refuses the call</td>
+    </tr>
+  </tbody>
+</table>
 
 <br /><br /><br />
