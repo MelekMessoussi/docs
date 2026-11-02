@@ -212,6 +212,37 @@ Every message your agent receives goes through the same eight stages, in the sam
   <Step title="Planner (**reasons, then calls its tools)**">
     The planner is the part of the agent that thinks. It reads the context, works out what the customer needs and calls tools by name. After each tool returns, it reads the result and decides what to do next. It repeats this for a few steps at most, and it never writes a single word the customer sees.
 
-    <br />
+    ![Image](/images/image-10.png "Image")
+
+    At any moment, each tool is in one of three states. In the diagram, the thick border is the tool being picked, solid borders are available tools, and dashed grey borders are tools that aren't open yet.
+
+    <table>
+      <colgroup>
+        <col width="100" />
+        <col width="588" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**State**</th>
+          <th>**What it means**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Picked**</td>
+          <td>The planner has chosen this tool for the current step</td>
+        </tr>
+        <tr>
+          <td>**Available**</td>
+          <td>The tool is enabled and can be used right now</td>
+        </tr>
+        <tr>
+          <td>**Not yet**</td>
+          <td>The tool isn't open at this point in the conversation. For example, the Schedule Appointments engine keeps booking locked until every required question is answered</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br /><br />
   </Step>
 </Steps>
