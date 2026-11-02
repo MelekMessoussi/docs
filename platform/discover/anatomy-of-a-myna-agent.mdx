@@ -277,3 +277,15 @@ Every message your agent receives goes through the same eight stages, in the sam
     <br />
   </Step>
 </Steps>
+
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 14, 'rankSpacing': 34}}}%%
+flowchart LR
+    E["Tool evidence"] --> C["Composer"]
+    P["Persona<br/>Mixer or Emulator"] -.-> C
+    CH["Channel policy<br/>Length · Layout"] -.-> C
+    C --> R(["One reply"])
+    classDef stage stroke:#e8743b,stroke-width:2px
+    class E,C,P,CH,R stage
+    linkStyle default stroke:#e8743b,stroke-width:1.5px
+```
