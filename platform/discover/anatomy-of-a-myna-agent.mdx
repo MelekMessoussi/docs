@@ -105,7 +105,7 @@ Every message your agent receives goes through the same eight stages, in the sam
     ![Image](/images/image-6.png "Image")
   </Step>
 
-  <Step title="Pre-Gates (**Checked before any model runs)**">
+  <Step title="Pre-Gates (**checking the message before any model runs)**">
     Before any AI model runs, the runtime checks the message against a set of rules written in code. If a check fails, the message is blocked or deferred, and no model is involved at all.
 
     ![Image](/images/image-7.png "Image")
@@ -154,5 +154,8 @@ Every message your agent receives goes through the same eight stages, in the sam
     <Info>
       Because these checks are code, they behave the same way every time. An opt-out is enforced by the software itself, so it never depends on the model remembering a rule.
     </Info>
+  </Step>
+
+  <Step title="**Context, assembled in modules**">
   </Step>
 </Steps>
