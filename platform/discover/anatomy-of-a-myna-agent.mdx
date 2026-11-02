@@ -274,18 +274,27 @@ Every message your agent receives goes through the same eight stages, in the sam
   <Step title="Composer (**writes the reply)**">
     Once the planner is done, a single composer writes the reply, using confirmed evidence only. Its voice comes from your persona, set with the persona sliders or learned by the Emulator from real messages. Its length and layout come from the channel policy, so the same answer can be a short text on SMS and a fuller message by email.
 
+    ![Image](/images/image-12.png "Image")
+  </Step>
+
+  <Step title="Post-Gates ( before anything gets sent)">
+    Before anything is sent, a second set of checks written in code compares every claim in the reply with the tool evidence. They catch replies that claim something no tool proved, and replies that would reveal the agent's internal instructions. A reply that fails gets one repair pass. If it still fails, the runtime sends a safe line instead.
+
     <br />
   </Step>
 </Steps>
 
 ```mermaid
-%%{init: {'flowchart': {'nodeSpacing': 14, 'rankSpacing': 34}}}%%
+%%{init: {'flowchart': {'nodeSpacing': 18, 'rankSpacing': 30}}}%%
 flowchart LR
-    E["Tool evidence"] --> C["Composer"]
-    P["Persona<br/>Mixer or Emulator"] -.-> C
-    CH["Channel policy<br/>Length · Layout"] -.-> C
-    C --> R(["One reply"])
+    C["Composer"] -->|One reply| PG{{"Post-gates<br/>Claims checked<br/>against evidence"}}
+    PG -->|Passes| S(["Send"])
+    PG -->|Fails| R["Repair once"]
+    R --> C
+    PG -->|Fails again| SL(["✕ Safe line"])
     classDef stage stroke:#e8743b,stroke-width:2px
-    class E,C,P,CH,R stage
+    classDef gate stroke:#e8743b,stroke-width:2px,stroke-dasharray:6 4
+    class C,S,R,SL stage
+    class PG gate
     linkStyle default stroke:#e8743b,stroke-width:1.5px
 ```
