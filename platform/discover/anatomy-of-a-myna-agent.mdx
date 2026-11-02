@@ -10,13 +10,11 @@ Every Myna agent runs inside the **Myna Runtime**, the **harness** that sits bet
 
 A Myna runtime has two main components that work together:
 
-- The AI model is responsible for understanding language. It interprets what your customer says, identifies their intent, and determines how to respond or what action to take.
-- The Myna harness handles everything around the model. It provides the context the model needs, defines which actions it can perform, enforces rules and constraints, and determines what response is ultimately delivered to your customer.
+- **The AI model:** the part that understands language. It reads what your customer writes, works out what they need, decides which actions to take and writes the reply.
+- **The harness (the Myna Runtime):** everything built around the model. It checks every message before the model sees it, gives the model only the information it needs, carries out the actions the model asks for, and checks every reply before it reaches your customer.
 
-The same runtime handles every message on every channel, whether it arrives by SMS, WhatsApp, email or webchat. You never have to configure it directly.
+The AI model works inside the harness, never on its own. It is called at two moments: once to plan what to do, and once to write the reply. Every other step is handled by software that follows your rules exactly.<br />
 
 <Tip>
   **You don't need to write prompts.** You write instructions, choose a persona and select tools in Workflow Studio, and the runtime builds what each stage needs from those choices.
 </Tip>
-
-<br />
