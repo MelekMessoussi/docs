@@ -281,6 +281,12 @@ Every message your agent receives goes through the same eight stages, in the sam
     Before anything is sent, a second set of checks written in code compares every claim in the reply with the tool evidence. They catch replies that claim something no tool proved, and replies that would reveal the agent's internal instructions. A reply that fails gets one repair pass. If it still fails, the runtime sends a safe line instead.
 
     ![Image](/images/image-13.png "Image")
+
+    | **The reply says** | **The evidence shows** | **What happens** |
+    | :-- | :-- | :-- |
+    | **You're booked for Tuesday at 10:00.** | outcome: booked | The reply is sent |
+    | **You're booked for Tuesday at 10:00.** | The booking failed | The reply is repaired, or replaced with a safe line |
+    | **Text that repeats the agent's internal instructions** | Not applicable | Caught as prompt leakage before it reaches the customer |
   </Step>
 </Steps>
 
