@@ -92,4 +92,25 @@ Myna splits that work apart. Your agent’s setup is kept in separate modules fo
   **The principle behind the runtime:** use a model for judgment and language, and software for anything that requires certainty.
 </Info>
 
-<br /><br />
+## **Follow one message through the runtime**
+
+Every message your agent receives goes through the same eight stages, in the same order. Here is the whole journey at a glance, followed by a closer look at each stage.
+
+<br /><br /><br /><br />
+
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 18, 'rankSpacing': 24}}}%%
+flowchart LR
+    A(["Inbound"]) --> B{{"Pre-gates"}}
+    B --> C["Context"]
+    C --> D["Planner"]
+    D <-->|evidence| E["Tools"]
+    D --> F["Composer"]
+    F --> G{{"Post-gates"}}
+    G --> H(["Send"])
+    classDef stage stroke:#e8743b,stroke-width:2px
+    classDef gate stroke:#e8743b,stroke-width:2px,stroke-dasharray:6 4
+    class A,C,D,E,F,H stage
+    class B,G gate
+    linkStyle default stroke:#e8743b,stroke-width:1.5px
+```
