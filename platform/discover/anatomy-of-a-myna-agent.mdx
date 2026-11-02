@@ -159,6 +159,53 @@ Every message your agent receives goes through the same eight stages, in the sam
   <Step title="**Context (assembled in modules)**">
     Your data is never merged into one giant block. Myna keeps them as separate modules, and each stage reads only the modules it needs. The composer, for example, uses your persona to write in the right voice and the channel policy to get the length right.
 
+    <table>
+      <colgroup>
+        <col width="124" />
+        <col width="533" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**Module**</th>
+          <th>**What it holds**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Objective**</td>
+          <td>What the agent is trying to achieve, from your instructions</td>
+        </tr>
+        <tr>
+          <td>**Persona**</td>
+          <td>The voice and personality the agent writes in</td>
+        </tr>
+        <tr>
+          <td>**Tool policy**</td>
+          <td>The rules for when and how each tool may be used</td>
+        </tr>
+        <tr>
+          <td>**Channel policy**</td>
+          <td>How replies should look on each channel, such as length and layout</td>
+        </tr>
+        <tr>
+          <td>**Knowledge**</td>
+          <td>Relevant information retrieved from Memory Hub</td>
+        </tr>
+        <tr>
+          <td>**Corrections**</td>
+          <td>Feedback you have reviewed and approved in the Playground</td>
+        </tr>
+        <tr>
+          <td>**Summary**</td>
+          <td>A summary of the conversation so far</td>
+        </tr>
+        <tr>
+          <td>**Live state**</td>
+          <td>The contact's current fields, answers, appointments and tickets</td>
+        </tr>
+      </tbody>
+    </table>
+
     <br />
   </Step>
 </Steps>
