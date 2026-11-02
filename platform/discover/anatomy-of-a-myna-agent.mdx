@@ -17,15 +17,6 @@ This runtime is built into every agent and works the same way on every channel, 
 
 ![Image](/images/image-4.png "Image")
 
-```mermaid
-```
-
-```mermaid
-```
-
-```mermaid
-```
-
 <Info>
   The AI model never works on its own. The control layer decides when it runs, what it sees and what happens to its answers, and enforces your rules exactly, every time.
 </Info>
@@ -104,7 +95,6 @@ Every message your agent receives goes through the same eight stages, in the sam
 
     ![Image](/images/image-6.png "Image")
   </Step>
-
   <Step title="Pre-Gates (**checking the message before any model runs)**">
     Before any AI model runs, the runtime checks the message against a set of rules written in code. If a check fails, the message is blocked or deferred, and no model is involved at all.
 
@@ -155,7 +145,6 @@ Every message your agent receives goes through the same eight stages, in the sam
       Because these checks are code, they behave the same way every time. An opt-out is enforced by the software itself, so it never depends on the model remembering a rule.
     </Info>
   </Step>
-
   <Step title="**Context (assembled in modules)**">
     Your data is never merged into one giant block. Myna keeps them as separate modules, and each stage reads only the modules it needs. The composer, for example, uses your persona to write in the right voice and the channel policy to get the length right.
 
@@ -208,7 +197,6 @@ Every message your agent receives goes through the same eight stages, in the sam
       </tbody>
     </table>
   </Step>
-
   <Step title="Planner (**reasons, then calls its tools)**">
     The planner is the part of the agent that thinks. It reads the context, works out what the customer needs and calls tools by name. After each tool returns, it reads the result and decides what to do next. It repeats this for a few steps at most, and it never writes a single word the customer sees.
 
@@ -243,7 +231,6 @@ Every message your agent receives goes through the same eight stages, in the sam
       </tbody>
     </table>
   </Step>
-
   <Step title="Tool Evidence (t**ools return evidence)**">
     When the planner calls a tool, the tool fills in its own inputs from the conversation and the contact record, runs, and returns structured output. That output is evidence of what actually happened, not a message for the customer. It goes back to the planner for its next decision, and on to the composer.
 
@@ -266,17 +253,18 @@ Every message your agent receives goes through the same eight stages, in the sam
     }
     ```
 
-    <Warning>
-      Tools that change data, such as booking an appointment or updating a contact, are treated as critical. Only one of them can run per step, and if a call has already succeeded, running it again returns the first result instead of booking twice.
-    </Warning>
+    <Info>
+      <Steps>
+        <Step title="Tools that change data, such as booking an appointment or updating a contact, are treated as critical. Only one of them can run per step, and if a call has already succeeded, running it again returns the first result instead of booking twice.">
+        </Step>
+      </Steps>
+    </Info>
   </Step>
-
   <Step title="Composer (**writes the reply)**">
     Once the planner is done, a single composer writes the reply, using confirmed evidence only. Its voice comes from your persona, set with the persona sliders or learned by the Emulator from real messages. Its length and layout come from the channel policy, so the same answer can be a short text on SMS and a fuller message by email.
 
     ![Image](/images/image-12.png "Image")
   </Step>
-
   <Step title="Post-Gates ( before anything gets sent)">
     Before anything is sent, a second set of checks written in code compares every claim in the reply with the tool evidence. They catch replies that claim something no tool proved, and replies that would reveal the agent's internal instructions. A reply that fails gets one repair pass. If it still fails, the runtime sends a safe line instead.
 
