@@ -1,3 +1,22 @@
-﻿---
+---
 title: "What Agents Can Do"
 ---
+
+What an AI agent is, how it differs from a language model on its own, and the tools a Myna agent can use.
+
+## **What is an AI agent?**
+
+An AI agent is a program that can hold a conversation and act on it. It reads what a person writes, works out what needs to happen, uses the tools it has been given to do that work, and then replies with the result.
+
+<br /><br /><br />
+
+```mermaid actions={true}
+flowchart TB
+    K["Knowledge<br/>Your business info"] --- A
+    M["Memory<br/>Past conversations"] --- A
+    A["Your agent<br/>Powered by a language model"]
+    A --- T["Tools<br/>Actions it can take"]
+    A --- R["Rules<br/>Checks on every reply"]
+    classDef agent fill:#4363dd,stroke:#4363dd,color:#ffffff
+    class A agent
+```
