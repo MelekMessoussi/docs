@@ -32,7 +32,6 @@
             "pages": [
               "platform/introduction",
               "platform/discover/what-agents-can-do",
-              "platform/discover/why-myna-agents-are-different",
               "platform/discover/anatomy-of-a-myna-agent"
             ]
           },
