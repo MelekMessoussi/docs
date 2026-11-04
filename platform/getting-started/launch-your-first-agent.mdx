@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Launch Your First Agent"
 ---
 
@@ -84,17 +84,67 @@ Every time a customer sends a message, the Agent Node reads its instructions and
 
 In the simple view, the settings are split into two groups:
 
-| **Section** | **What it controls** | **In our example** |
-| --- | --- | --- |
-| **Instructions** | What the agent is told to do on every turn | Book cleanings and check-ups, and answer questions |
-| **Context** | What the agent can see about the business, contact and conversation | Filled in from the business profile |
-| **Tools** | The actions the agent can take | Ask questions, save details and book appointments |
-| **Knowledge** | The information the agent can search | The clinic's services, prices and policies |
-| **Persona** | The name and personality the agent speaks with | Sophie, the front desk assistant |
-| **Channels** | Where the agent talks to customers | Web chat on the clinic's website |
-| **Reply settings** | How and when the agent replies | Default settings |
-| **Follow-ups** | Messages sent when a customer stops replying | None for now |
-| **Contact fields** | Which customer details the agent can see and save | Default settings |
+<table>
+  <colgroup>
+    <col width="131" />
+    <col width="268" />
+    <col width="318" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Section**</th>
+      <th>**What it controls**</th>
+      <th>**In our example**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Instructions**</td>
+      <td>What the agent is told to do on every turn</td>
+      <td>Book cleanings and check-ups, and answer questions</td>
+    </tr>
+    <tr>
+      <td>**Context**</td>
+      <td>What the agent can see about the business, contact and conversation</td>
+      <td>Filled in from the business profile</td>
+    </tr>
+    <tr>
+      <td>**Tools**</td>
+      <td>The actions the agent can take</td>
+      <td>Ask questions, save details and book appointments</td>
+    </tr>
+    <tr>
+      <td>**Knowledge**</td>
+      <td>The information the agent can search</td>
+      <td>The clinic's services, prices and policies</td>
+    </tr>
+    <tr>
+      <td>**Persona**</td>
+      <td>The name and personality the agent speaks with</td>
+      <td>Sophie, the front desk assistant</td>
+    </tr>
+    <tr>
+      <td>**Channels**</td>
+      <td>Where the agent talks to customers</td>
+      <td>Web chat on the clinic's website</td>
+    </tr>
+    <tr>
+      <td>**Reply settings**</td>
+      <td>How and when the agent replies</td>
+      <td>Default settings</td>
+    </tr>
+    <tr>
+      <td>**Follow-ups**</td>
+      <td>Messages sent when a customer stops replying</td>
+      <td>None for now</td>
+    </tr>
+    <tr>
+      <td>**Contact fields**</td>
+      <td>Which customer details the agent can see and save</td>
+      <td>Default settings</td>
+    </tr>
+  </tbody>
+</table>
 
 The first three belong to the **Agent Node**. The rest are **agent settings** and apply to the whole agent.
 
@@ -110,14 +160,44 @@ Open **Tools**. Every agent starts with three:
 
 Select **Add tool** to add more:
 
-| **Tool** | **What it lets the agent do** |
-| --- | --- |
-| **Ask Qualification** | Ask the questions you set up, one at a time, and save the answers |
-| **Scheduling** | Offer open times, book appointments and move them |
-| **Manage Tickets** | Open and update support tickets for your team |
-| **Hand Off to Human** | Pass the conversation to a teammate and stop replying |
-| **Send Call to Action** | Send a link, phone number or email address you set up |
-| **Send GIF** | Send a GIF after a reply when your instructions say to |
+<table>
+  <colgroup>
+    <col width="168" />
+    <col width="511" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Tool**</th>
+      <th>**What it lets the agent do**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Ask Qualification**</td>
+      <td>Ask the questions you set up, one at a time, and save the answers</td>
+    </tr>
+    <tr>
+      <td>**Scheduling**</td>
+      <td>Offer open times, book appointments and move them</td>
+    </tr>
+    <tr>
+      <td>**Manage Tickets**</td>
+      <td>Open and update support tickets for your team</td>
+    </tr>
+    <tr>
+      <td>**Hand Off to Human**</td>
+      <td>Pass the conversation to a teammate and stop replying</td>
+    </tr>
+    <tr>
+      <td>**Send Call to Action**</td>
+      <td>Send a link, phone number or email address you set up</td>
+    </tr>
+    <tr>
+      <td>**Send GIF**</td>
+      <td>Send a GIF after a reply when your instructions say to</td>
+    </tr>
+  </tbody>
+</table>
 
 ![Adding a tool to the agent](/images/launch-your-first-agent/add-tool.png)
 
@@ -133,12 +213,36 @@ Select the pencil next to **Scheduling** to open its settings.
 
 Under **Capabilities**, choose what the agent is allowed to do:
 
-| **Capability** | **What it does** |
-| --- | --- |
-| **Schedule Appointment** | Books a specific date and time |
-| **Offer Appointment** | Suggests open times when the customer hasn't picked one |
-| **Modify Appointment** | Moves an appointment the customer already booked |
-| **Keep AI On After Booking** | Keeps replying after a booking, for questions and changes. When it's off, the agent goes quiet and new messages wait for your team |
+<table>
+  <colgroup>
+    <col width="214" />
+    <col width="501" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Capability**</th>
+      <th>**What it does**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Schedule Appointment**</td>
+      <td>Books a specific date and time</td>
+    </tr>
+    <tr>
+      <td>**Offer Appointment**</td>
+      <td>Suggests open times when the customer hasn't picked one</td>
+    </tr>
+    <tr>
+      <td>**Modify Appointment**</td>
+      <td>Moves an appointment the customer already booked</td>
+    </tr>
+    <tr>
+      <td>**Keep AI On After Booking**</td>
+      <td>Keeps replying after a booking, for questions and changes. When it's off, the agent goes quiet and new messages wait for your team</td>
+    </tr>
+  </tbody>
+</table>
 
 Under **Calendars**, choose the calendar the agent books into. If you don't have one yet, select **Create New**.
 
@@ -146,14 +250,44 @@ Under **Calendars**, choose the calendar the agent books into. If you don't have
 
 We created a calendar called **Dental Visits**. The main settings are:
 
-| **Setting** | **What it means** |
-| --- | --- |
-| **Name and description** | The description tells the agent what the calendar is for. If you link several calendars, the agent uses the descriptions to pick the right one |
-| **Location** | Where the appointment happens, such as a virtual meeting, a phone call or your business address |
-| **Duration** | How long each appointment lasts. The default is 30 minutes |
-| **Soonest and latest availability** | How far ahead patients can book. The defaults are from the next business day up to 60 days ahead |
-| **Booking hours** | The days and hours the calendar can be booked. The default is Monday to Friday, 9 AM to 5 PM |
-| **Time zone** | Taken from your business profile |
+<table>
+  <colgroup>
+    <col width="247" />
+    <col width="460" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Setting**</th>
+      <th>**What it means**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Name and description**</td>
+      <td>The description tells the agent what the calendar is for. If you link several calendars, the agent uses the descriptions to pick the right one</td>
+    </tr>
+    <tr>
+      <td>**Location**</td>
+      <td>Where the appointment happens, such as a virtual meeting, a phone call or your business address</td>
+    </tr>
+    <tr>
+      <td>**Duration**</td>
+      <td>How long each appointment lasts. The default is 30 minutes</td>
+    </tr>
+    <tr>
+      <td>**Soonest and latest availability**</td>
+      <td>How far ahead patients can book. The defaults are from the next business day up to 60 days ahead</td>
+    </tr>
+    <tr>
+      <td>**Booking hours**</td>
+      <td>The days and hours the calendar can be booked. The default is Monday to Friday, 9 AM to 5 PM</td>
+    </tr>
+    <tr>
+      <td>**Time zone**</td>
+      <td>Taken from your business profile</td>
+    </tr>
+  </tbody>
+</table>
 
 Once you create the calendar, it's linked to the agent automatically.
 
@@ -179,10 +313,28 @@ Your agent always books into a Myna calendar. If your team already works from Go
 
     ![The Linked calendars and Conflict calendars fields](/images/launch-your-first-agent/linked-calendars.png)
 
-    | **Field** | **What it does** |
-    | --- | --- |
-    | **Linked calendars** | Every appointment the agent books is also added to these calendars |
-    | **Conflict calendars** | Myna checks these calendars for busy times, so the agent never offers a time that's already taken |
+    <table>
+      <colgroup>
+        <col width="161" />
+        <col width="513" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>**Field**</th>
+          <th>**What it does**</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Linked calendars**</td>
+          <td>Every appointment the agent books is also added to these calendars</td>
+        </tr>
+        <tr>
+          <td>**Conflict calendars**</td>
+          <td>Myna checks these calendars for busy times, so the agent never offers a time that's already taken</td>
+        </tr>
+      </tbody>
+    </table>
   </Step>
   <Step title="**Save**">
     Select **Save**. From now on, the agent checks both calendars before it offers a time, and each booking appears in your own calendar as well as in Myna.
@@ -199,14 +351,44 @@ Qualifications are the questions your agent asks to collect the details you need
 
 ![Adding a qualification](/images/launch-your-first-agent/add-qualification.png)
 
-| **Field** | **What it's for** |
-| --- | --- |
-| **Goal** | What the agent needs to find out, in plain words. The agent writes the question itself |
-| **Mapped Field** | The contact field the answer is saved to. You can also select **Create custom field** to make a new one |
-| **Description / Guidance** | How to read, save or explain the answer, up to 400 characters |
-| **Max Attempts** | How many times the agent asks before moving on. It doesn't apply to required questions |
-| **Required** | The agent must get an answer before it can use a locked tool |
-| **Skip if already filled** | The agent doesn't ask if the contact record already has the answer |
+<table>
+  <colgroup>
+    <col width="196" />
+    <col width="519" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Field**</th>
+      <th>**What it's for**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Goal**</td>
+      <td>What the agent needs to find out, in plain words. The agent writes the question itself</td>
+    </tr>
+    <tr>
+      <td>**Mapped Field**</td>
+      <td>The contact field the answer is saved to. You can also select **Create custom field** to make a new one</td>
+    </tr>
+    <tr>
+      <td>**Description / Guidance**</td>
+      <td>How to read, save or explain the answer, up to 400 characters</td>
+    </tr>
+    <tr>
+      <td>**Max Attempts**</td>
+      <td>How many times the agent asks before moving on. It doesn't apply to required questions</td>
+    </tr>
+    <tr>
+      <td>**Required**</td>
+      <td>The agent must get an answer before it can use a locked tool</td>
+    </tr>
+    <tr>
+      <td>**Skip if already filled**</td>
+      <td>The agent doesn't ask if the contact record already has the answer</td>
+    </tr>
+  </tbody>
+</table>
 
 We added two required qualifications:
 
@@ -248,11 +430,32 @@ Book cleanings and check-ups for patients of Bright Smile Dental, and answer the
 
 The editor has three shortcuts:
 
-| **Type** | **To** |
-| --- | --- |
-| `#` | Add a heading |
-| `@` | Insert a contact field, such as the customer's first name |
-| `/` | Insert one of the agent's tools as a tool chip |
+<table>
+  <colgroup>
+    <col width="100" />
+    <col width="611" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Type**</th>
+      <th>**To**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`#`</td>
+      <td>Add a heading</td>
+    </tr>
+    <tr>
+      <td>`@`</td>
+      <td>Insert a contact field, such as the customer's first name</td>
+    </tr>
+    <tr>
+      <td>`/`</td>
+      <td>Insert one of the agent's tools as a tool chip</td>
+    </tr>
+  </tbody>
+</table>
 
 <Tip>
   Keep instructions about the job: what to do, in what order, and what to avoid. Each tool already comes with its own rules for how it works, so you don't need to explain how to book an appointment, only when to do it.
@@ -292,11 +495,37 @@ Both give your agent information, but in different ways:
 - **Context** is what the agent is always shown. Before every reply, Myna gives it the business info, the customer's details, the date and time, and the conversation so far. The agent doesn't have to do anything to get it.
 - **Knowledge** is what the agent looks up when it needs it. Your Memory Hub is too large to read on every message, so the agent uses **Search Memory** when a question calls for it and only brings back the parts that match.
 
-| | **Context** | **Knowledge** |
-| --- | --- | --- |
-| **How the agent gets it** | Given automatically on every message | Searched with Search Memory when needed |
-| **What it holds** | Facts about your business, the customer and the conversation | Your documents, FAQs, policies and website pages |
-| **Where you edit it** | Business Profile and contact fields | Memory Hub |
+<table>
+  <colgroup>
+    <col width="158" />
+    <col width="266" />
+    <col width="284" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th></th>
+      <th>**Context**</th>
+      <th>**Knowledge**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**How the agent gets it**</td>
+      <td>Given automatically on every message</td>
+      <td>Searched with Search Memory when needed</td>
+    </tr>
+    <tr>
+      <td>**What it holds**</td>
+      <td>Facts about your business, the customer and the conversation</td>
+      <td>Your documents, FAQs, policies and website pages</td>
+    </tr>
+    <tr>
+      <td>**Where you edit it**</td>
+      <td>Business Profile and contact fields</td>
+      <td>Memory Hub</td>
+    </tr>
+  </tbody>
+</table>
 
 In our test, a patient asked "Do you take insurance?" and the agent answered from **context**, because the clinic's business profile says it accepts most PPO plans. When she asked "How much is a cleaning?", the agent searched its **knowledge** and found the price in Memory Hub.
 
