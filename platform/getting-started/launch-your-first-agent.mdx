@@ -586,6 +586,54 @@ Open **Channels** to choose where the agent talks to customers.
 
 The clinic wants patients to chat from its website, so we chose **Web Chat** and selected the **Bright Smile Website Chat** widget.
 
+### **How do I connect other channels?**
+
+Each channel is set up once in your workspace. After that, any agent can use it.
+
+| **Channel** | **What you need** | **Where to set it up** |
+| --- | --- | --- |
+| **SMS** | A phone number. Phone System is available on the Plus and Pro plans, and numbers in the US and Canada need a one-time business registration (A2P 10DLC) | **Settings → Phone System** |
+| **Web Chat** | A chat widget installed on your website | **Settings → Webchats** |
+| **WhatsApp, email, Facebook, Instagram and Google Business** | A HighLevel (LeadConnector) connection | **Settings → Integrations** |
+
+#### **Web Chat**
+
+<Steps>
+  <Step title="**Create a widget**">
+    Go to **Settings → Webchats** and select **New widget**. Give it a name and set how it looks under **Appearance** and **Behaviour**.
+  </Step>
+  <Step title="**Install it on your website**">
+    Open the **Installation** tab and copy the code snippet. Paste it into your website's HTML before the closing `</body>` tag on every page where the chat should appear.
+
+    ![The Installation tab of a chat widget](/images/launch-your-first-agent/webchat-install.png)
+  </Step>
+  <Step title="**Approve your domain**">
+    Under **Security**, add your website's domain so the widget only works on your site.
+  </Step>
+  <Step title="**Assign it to your agent**">
+    In the agent's **Channels**, select **Web Chat** and choose the widget under **Assigned Webchat**.
+  </Step>
+</Steps>
+
+#### **WhatsApp, email and social channels**
+
+These channels run through HighLevel, so you connect your HighLevel account first.
+
+<Steps>
+  <Step title="**Connect HighLevel**">
+    Go to **Settings → Integrations**, select **LeadConnector** and connect your HighLevel sub-account.
+
+    ![LeadConnector on the Integrations page](/images/launch-your-first-agent/integrations-leadconnector.png)
+  </Step>
+  <Step title="**Choose the channel**">
+    In the agent's **Channels**, a **LeadConnector** tab now appears next to **Myna**. Select it, then choose the channel you want the agent to use: SMS, email, Facebook, Google Business, Instagram or WhatsApp. For SMS and WhatsApp, also choose the number to send from.
+  </Step>
+</Steps>
+
+<Note>
+  An agent can use Myna's SMS and Web Chat at the same time. A HighLevel channel works on its own, so an agent that uses one can't use other channels as well.
+</Note>
+
 ## **How should the agent reply?**
 
 The last three sections work well with their default settings. Change them when you need to.
