@@ -281,6 +281,25 @@ Open **Knowledge** to choose what the agent can search.
 
 Our booking agent only needs General Memory, where the clinic's services, prices and policies already are.
 
+### **What's the difference between context and knowledge?**
+
+Both give your agent information, but in different ways:
+
+- **Context** is what the agent is always shown. Before every reply, Myna gives it the business info, the customer's details, the date and time, and the conversation so far. The agent doesn't have to do anything to get it.
+- **Knowledge** is what the agent looks up when it needs it. Your Memory Hub is too large to read on every message, so the agent uses **Search Memory** when a question calls for it and only brings back the parts that match.
+
+| | **Context** | **Knowledge** |
+| --- | --- | --- |
+| **How the agent gets it** | Given automatically on every message | Searched with Search Memory when needed |
+| **What it holds** | Facts about your business, the customer and the conversation | Your documents, FAQs, policies and website pages |
+| **Where you edit it** | Business Profile and contact fields | Memory Hub |
+
+In our test, a patient asked "Do you take insurance?" and the agent answered from **context**, because the clinic's business profile says it accepts most PPO plans. When she asked "How much is a cleaning?", the agent searched its **knowledge** and found the price in Memory Hub.
+
+<Tip>
+  Put short facts your agent should always know, such as your opening hours, address or payment options, in your business profile. Put longer information it should look up, such as price lists, policies and FAQs, in Memory Hub.
+</Tip>
+
 ## **How do I give the agent a personality?**
 
 Open **Persona**. A persona is the name and personality your agent speaks with. Choose **Select Existing** to reuse one, or **Create New** to make one.
