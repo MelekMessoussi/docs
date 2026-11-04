@@ -80,27 +80,7 @@ Everything you change is saved automatically to a **draft**. Customers only talk
 
 Every time a customer sends a message, the Agent Node reads its instructions and what it knows about the conversation, decides which tools to use, and then writes a reply in the agent's voice.
 
-```mermaid
-flowchart LR
-    msg(["Customer sends<br/>a message"])
-
-    subgraph node["Agent Node"]
-        direction LR
-        read["Reads its instructions<br/>and the conversation"]
-        decide["Decides which<br/>tools to use"]
-        tools["Uses the tools<br/>it picked"]
-        write["Writes the reply<br/>in the agent's voice"]
-        read --> decide --> tools --> write
-    end
-
-    reply(["Customer gets<br/>the reply"])
-
-    msg --> read
-    write --> reply
-
-    classDef agent fill:#4363dd,stroke:#4363dd,color:#ffffff
-    class read,decide,tools,write agent
-```
+![Image](/images/image-29.png "Image")
 
 In the simple view, the settings are split into two groups:
 
